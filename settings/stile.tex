@@ -1,0 +1,27 @@
+% ------------------------
+% ---- DOCUMENT STYLE ----
+% ------------------------
+
+\pagestyle{plain}
+\raggedbottom 
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}{\LARGE}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+%\hypersetup{ % Setup dell'aspetto dei link, se vuoi qualcosa di particolare
+%    colorlinks,
+%    citecolor=black,
+%    filecolor=black,
+%    linkcolor=black,
+%    urlcolor=black
+%}
+
+% \renewcommand{\footnoterule}{ % Rende la linea delle footnotes larga tutta la pagina
+%   \kern -3pt
+%   \hrule width \textwidth height 1pt
+%   \kern 2pt
+% } 
+
+\renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont} % Imposta la dimensione del testo delle footnotes
+\setlength{\footnotesep}{0.5cm} % Imposta lo spazio fra e singole footnotes
+\setlength{\skip\footins}{1.5cm} % Imposta lo spazio fra il corpo e le footnotes
