@@ -1,7 +1,9 @@
 \chapter*{Introduzione}
 \addcontentsline{toc}{chapter}{Introduzione}
 
+\phantomsection
 \section*{Obiettivi della tesi}
+\addcontentsline{toc}{section}{Obiettivi della tesi}
 
 La tesi analizza le principali architetture per applicazioni web, con particolare attenzione al confronto tra
 Server-Side Rendering (SSR), Client-Side Rendering (CSR) e architetture ibride. Viene trattato il concetto di hydration,
@@ -23,4 +25,69 @@ riguardanti variabili, funzioni e oggetti, ottenute nella prima fase di creazion
 Viene inoltre esaminata la gestione delle Promises, oggetti che rappresentano l'eventuale completamento o fallimento di
 operazioni asincrone, importanti per l'implementazione di chiamate a funzioni asincrone, in modo da rendere l'esperienza
 utente dinamica e reattiva, mantenendo comunque un codice pulito e leggibile.
+
+\newpage
+
+\phantomsection
 \section*{Importanza delle architetture web moderne}
+\addcontentsline{toc}{section}{Importanza delle architetture web moderne}
+
+Negli ultimi anni, lo sviluppo di applicazioni web ha subito un'evoluzione radicale, guidata dalla crescente necessità
+di prestazioni elevate, interfacce utente reattive e una migliore esperienza utente. Le tradizionali pagine web
+statiche, generate interamente dal server, non sono più sufficienti per soddisfare le esigenze moderne di
+applicazioni dinamiche e interattive, come quelle utilizzate nei social network, nelle piattaforme di e-commerce e nei
+servizi di streaming. Questo ha portato all’emergere di nuove architetture web che cercano di ottimizzare il modo in cui
+i contenuti vengono generati e serviti, sia lato client che server.
+
+Le moderne architetture web, come il Server-Side Rendering (SSR), il Client-Side Rendering (CSR) e le architetture
+ibride, sono state sviluppate per bilanciare le esigenze di performance e usabilità. Da un lato, l'SSR permette di
+caricare velocemente contenuti pre-renderizzati, migliorando il tempo di caricamento percepito dagli utenti e
+l'indicizzazione SEO. Dall'altro, il CSR consente di sviluppare applicazioni più interattive e reattive, spostando gran
+parte del lavoro computazionale dal server al browser dell'utente.
+
+Un'altra esigenza critica delle moderne architetture web è l'ottimizzazione del caricamento delle risorse, che ha
+portato all'adozione di tecniche come il lazy loading e il code splitting. Questi approcci consentono di caricare solo
+le parti dell'applicazione necessarie, riducendo il tempo di caricamento iniziale e migliorando l'esperienza utente,
+soprattutto su dispositivi con risorse limitate.
+
+In questo contesto, l'adozione di architetture flessibili e performanti è diventata essenziale per lo sviluppo di
+applicazioni web che possano soddisfare gli standard moderni in termini di reattività, scalabilità e usabilità. Questo
+studio intende esplorare tali architetture e le tecniche di ottimizzazione correlate, con l'obiettivo di fornire una
+comprensione approfondita delle sfide e delle opportunità legate allo sviluppo di applicazioni web efficienti e
+scalabili.
+
+\newpage
+
+\phantomsection
+\section*{Struttura della tesi}
+\addcontentsline{toc}{section}{Struttura della tesi}
+
+\color{red}
+
+
+La tesi è strutturata in cinque capitoli principali, ciascuno dei quali affronta un aspetto specifico delle architetture
+web moderne e delle tecniche di ottimizzazione correlate.
+
+Il primo capitolo introduce il contesto generale delle architetture web moderne, analizzando le principali differenze tra
+Server-Side Rendering (SSR) e Client-Side Rendering (CSR), e presentando le architetture ibride come soluzione
+intermedia. Vengono esaminate le caratteristiche, i vantaggi e gli svantaggi di ciascuna architettura, con particolare
+attenzione al confronto tra SSR e CSR in termini di prestazioni, usabilità e indicizzazione SEO.
+
+Il secondo capitolo approfondisce il concetto di hydration, una tecnica utilizzata per convertire pagine HTML statiche in
+pagine web dinamiche post-rendering. Viene spiegato il funzionamento di questa tecnica, con particolare attenzione al
+collegamento di event handlers agli elementi della pagina, per garantire un'interattività completa anche dopo il
+rendering iniziale.
+
+Il terzo capitolo esplora le gestione delle Promises in JavaScript, oggetti che rappresentano il completamento o il
+fallimento di operazioni asincrone. Vengono analizzati i principi fondamentali delle Promises, con esempi pratici di
+utilizzo per la gestione di chiamate asincrone, e le best practices per scrivere codice pulito e leggibile.
+
+Il quarto capitolo si concentra sulle tecniche di ottimizzazione delle performance, come il code splitting e il lazy
+loading, che consentono di migliorare il caricamento delle risorse e l'esperienza utente. Vengono esaminate le
+caratteristiche di queste tecniche, i vantaggi che offrono e le modalità di implementazione in applicazioni web moderne.
+
+Il quinto capitolo analizza l'Event Loop e l'Execution Context di JavaScript, due concetti fondamentali per la
+comprensione del comportamento delle applicazioni con componenti asincrone. Viene spiegato il funzionamento
+dell'Event Loop, con particolare attenzione alla gestione delle operazioni asincrone, e l'Execution Context, con
+
+\color{black}
