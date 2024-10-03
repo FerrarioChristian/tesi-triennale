@@ -5,12 +5,14 @@
 \input{settings/stile}
 \input{settings/comandi}
 
+
 \begin{document}
 
 \pagenumbering{gobble} 
 \input{chapters/frontespizio}
 
 \tableofcontents
+\clearpage
 \pagenumbering{arabic} 
 \setcounter{chapter}{0}
 
@@ -19,6 +21,7 @@
 \include{chapters/architectures/main}
 \include{chapters/hydration/main}
 \include{chapters/performance/main}
+
 
 \backmatter
 \sloppy 

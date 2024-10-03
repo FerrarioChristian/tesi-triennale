@@ -4,14 +4,49 @@ Ogni browser ha il proprio JavaScript Engine, che implementa lo standard ECMAScr
 Il JavaScript Engine è il cuore del JavaScript Runtime Environment.
 Quando viene scritto del codice JavaScript, esso non viene esguito direttamente dall'hadware del computer,
 ma passa attraverso il JavaScript Engine, che lo traduce in istruzioni che il computer può eseguire.
-\color{red}Questo processo avviene in tre fasi:
+Questo processo avviene in tre fasi:
 \begin{enumerate}
-    \item Parsing: il codice sorgente viene analizzato e trasformato in un Abstract Syntax Tree (AST).
-    \item Compilation: l'AST viene tradotto in bytecode, che è un insieme di istruzioni che il computer può eseguire.
-    \item Esecuzione: il bytecode viene eseguito dal motore JavaScript.
+    \item \textbf{Parsing}: il codice sorgente viene analizzato e trasformato in un Abstract Syntax Tree (AST).
+    \item \textbf{Compilazione}: l'AST viene tradotto in bytecode, che è un insieme di istruzioni che il computer può eseguire.
+    \item \textbf{Esecuzione}: il bytecode viene eseguito dal motore JavaScript.
 \end{enumerate}
 
-\color{codegreen}
-\textbf{Spiegazione delle tre fasi} 
+\subsection{Parsing}
+Nella fase di parsing, il codice viene scomposto in token, che sono i blocchi di base del codice.
+Dopo di che, i token vengono analizzati dal Syntax Parser, e trasformati in un Abstract Syntax Tree.
+L'AST è una rappresentazione ad albero del codice sorgente, che permette al motore JavaScript di capire come eseguire il codice.
 
-\color{black}
+\textbf{Esempio e spiegazione di AST:}
+
+
+\subsection{Compilazione}
+Prima di entrare nel dettaglio della fase di compilazione, è necessario chiarire alcuni concetti chiave.
+
+\paragraph{Interpreters e Compilers}
+Esistono due macro-categorie di linguaggi di programmazione: quelli interpretati e quelli compilati.
+
+Un linguaggio interpretato è un linguaggio il cui codice sorgente viene eseguito direttamente da un interprete.
+L'interprete è il programma che legge il codice sorgente e lo esegue istruzione per istruzione.
+
+Un linguaggio compilato è un linguaggio il cui codice sorgente viene tradotto in un linguaggio macchina, che può essere eseguito direttamente dall'hardware del computer.
+Il compilatore è il programma che traduce il codice sorgente in linguaggio macchina, e durante questa fase di traduzione, vengono effettuate delle ottimizzazioni che rendono il codice più efficiente.
+
+Ora resta da rispondere alla domanda: JavaScript è un linguaggio interpretato o compilato?
+La risposta è: dipende dal JavaScript Engine che si sta utilizzando.
+In generale si può dire che, quando è stato ideato da Brendan Eich nel 1995, JavaScript era un linguaggio puramente interpretato, siccome il suo utilizzo principale è all'interno dei browser, e con la potenza di calcolo di allora non ci si poteva permettere di aggiungere ulteriore tempo di attesa all'utente a causa della compilazione. Ma negli anni i JavaScript Engine si sono evoluti, e oggi sono in grado di eseguire delle ottimizzazioni simili ad un linguaggio compilato, che rendono il codice più efficiente.
+
+Questo processo è chiamato Just-In-Time Compilation.
+
+\href{https://medium.com/@aamchora/what-exactly-just-in-time-jit-compilation-is-in-javascript-f7aea482843f}{\color{red}{Approfondimento su JIT Compilation e schema, magari inserire pro e contro di interpreseter e compiler}}
+
+\includegraphics[width=0.9\textwidth]{javascript/jit-compilation.png}
+\paragraph{Just-In-Time Compilation}
+Il Just-In-Time Compilation è una tecnica di ottimizzazione che consiste nel tradurre il codice sorgente in bytecode, e poi eseguirlo. Questo processo permette di eseguire delle ottimizzazioni che rendono il codice più efficiente.
+In particolare, nella compilazione JIT, il codice viene tradotto in bytecode, e poi eseguito. Durante l'esecuzione, un componente apposito, chiamato \textit{monitor}, monitora il codice, e se rileva che una parte del codice può beneficiare di una ottimizzazione (ad esempio una porzione di codice che viene eseguita in più occasioni, o del codice che potrebbe richiedere un elevato tempo computazionale), allora la traduce in linguaggio macchina, la ottimizza, e la sostituisce al bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.
+
+
+\subsection{Esecuzione}
+Memoria heap e Call Stack
+
+\subsection{IDK}
+Prendendo in esempio il JavaScript Engine V8, sviluppato da Google per il browser Chrome e utilizzato anche da NodeJs, il codice sorgente viene prima di tutto analizzato dal parser, e tras

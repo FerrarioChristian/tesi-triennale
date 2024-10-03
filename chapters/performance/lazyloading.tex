@@ -1,5 +1,15 @@
 \section{Lazy Loading}
 
 \subsection{Cos'è il Lazy Loading?}
+Il Lazy Loading (conosciuto anche come caricamento asincrono) è una strategia per identificare le risorse come non bloccanti (non critiche) e caricarle solo quando necessario. È un modo per abbreviare la lunghezza del \href{https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path}{\textit{critical rendering path}}, che si traduce in tempi di caricamento della pagina ridotti.
+
+\subsection{Panoramica}
+As the web has evolved, we have come to see huge increases in the number and size of assets sent to users. Between 2011 and 2019, the median resource weight increased from ~100KB to ~400KB for desktop and ~50KB to ~350KB for mobile. While Image size has increased from ~250KB to ~900KB on desktop and ~100KB to ~850KB on mobile.
+
+One of the methods we can use to tackle this problem is to shorten the Critical Rendering Path length by lazy loading resources that are not critical for the first render to happen. A practical example would be when you land on the home page of an e-commerce site with a link to a cart page/section, and none of the cart page's resources (such as JavaScript, CSS, and images) are downloaded until you navigate there.
+
+\subsection{Strategie}
+\href{https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#strategies}{\textit{Strategies}}:
+
 \subsection{Vantaggi e svantaggi del Lazy Loading}
 \subsection{Impatto sulle performance}

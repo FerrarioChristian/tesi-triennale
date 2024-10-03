@@ -1,1 +1,15 @@
 \section{Vantaggi e sfide nell'implementazione dell'Hydration}
+Vantaggi:
+\begin{itemize}
+    \item Miglior SEO: Poiché l'HTML viene generato sul server, i motori di ricerca possono indicizzare meglio il contenuto.
+    \item Caricamento rapido: L'utente vede subito il contenuto anche con connessioni lente.
+    \item User Experience: Si ottiene un'esperienza più fluida, con interattività aggiunta in modo incrementale.
+\end{itemize}
+
+Sfide:
+\begin{itemize}
+    \item Caricamento doppio: Il contenuto viene caricato prima come HTML e poi "idrato" con il JavaScript, richiedendo risorse duplicate.
+    \item Complessità del codice: Implementare l'hydration correttamente richiede gestire la sincronizzazione tra il codice lato server e lato client.
+    \item Performance: L'hydration può risultare lenta se il numero di componenti è elevato, riducendo l'efficienza.
+    \item Ottimizzare l'hydration richiede bilanciare tra performance e interattività, potendo combinare tecniche come il partial hydration per ridurre i tempi di attivazione del JavaScript.
+\end{itemize}
