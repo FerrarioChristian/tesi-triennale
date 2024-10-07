@@ -1,1 +1,8 @@
 \section{Client Side Rendering (CSR)}
+CSR, noto anche come rendering lato client, è una tecnica in cui il processo di rendering avviene sul lato client, in genere nel browser Web dell'utente.
+In CSR, il server invia un documento HTML minimo insieme a file JavaScript al client. Il codice JavaScript è responsabile del recupero dei dati da un'API e della manipolazione del Document Object Model (DOM) per aggiornare l'interfaccia utente.
+Vantaggi di CSR:
+Interattività migliorata: CSR consente applicazioni Web altamente interattive poiché il client può aggiornare l'interfaccia utente senza effettuare richieste aggiuntive al server. Ciò si traduce in un'esperienza utente fluida e reattiva.
+Prestazioni migliorate: una volta completato il caricamento iniziale della pagina, le interazioni successive possono essere più rapide poiché il rendering lato client evita aggiornamenti completi della pagina. Vengono recuperati solo i componenti o i dati necessari, riducendo il carico del server e migliorando le prestazioni complessive.
+Esempio di CSR:
+Considera un feed di social media che visualizza un elenco di post. Con CSR, l'HTML e il JavaScript iniziali vengono inviati al client. Il codice JavaScript recupera quindi i dati del post da un'API e li visualizza dinamicamente nel browser dell'utente. Mentre l'utente scorre, altri post possono essere recuperati in modo asincrono, consentendo una paginazione fluida senza dover ricaricare l'intera pagina.
