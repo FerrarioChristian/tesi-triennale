@@ -1,0 +1,25 @@
+\section{Speculative loading}
+\href{https://developer.mozilla.org/en-US/docs/Web/Performance/Speculative_loading}{Speculative Loading}
+
+Lo speculative loading è una tecnica avanzata per migliorare le performance web attraverso lo svolgimento anticipato di azioni non ancora richieste dall'utente, come ad esempio fetch di dati da API, o il caricamento di pagine e risorse differenti da quelle attualmente visualizzate, prevedendo le azioni future dell'utente.
+
+Questa tecnica è particolarmente utile per ridurre la percezione dei tempi di caricamento e migliorare l'esperienza utente, poiché anticipando il caricamento delle risorse che saranno necessarie in futuro, la percezione dell'utente sarà quella di un caricamento istantaneo, poiché le risorse saranno già disponibili in cache.
+
+\subsection{Meccanismi di Speculative Loading}
+Lo speculative loading può essere implementato in vari modi, a seconda delle esigenze dell'applicazione e delle risorse coinvolte. Alcuni esempi comuni includono:
+\begin{itemize}
+    \item \textbf{Prefetching}: Il prefetching è una tecnica che consiste nel caricare in anticipo le risorse necessarie per una determinata azione o pagina. Ad esempio, un browser potrebbe prefetchare le risorse di una pagina successiva, in modo che siano già disponibili in cache quando l'utente decide di visitarla. Questo riduce i tempi di caricamento e migliora l'esperienza utente.
+    \item \textbf{Preloading}: Il preloading è simile al prefetching, ma si concentra sul caricamento di risorse critiche per la pagina attuale, come ad esempio immagini o script necessari per il rendering. Questo assicura che le risorse più importanti siano disponibili il prima possibile, migliorando la velocità di caricamento e la reattività dell'applicazione.
+    \item \textbf{Prerendering}: Il prerendering è una tecnica che consiste nel caricare in background una pagina web completa, in modo che sia pronta per essere visualizzata istantaneamente quando l'utente decide di visitarla. Questo è particolarmente utile per le pagine di destinazione o le pagine più frequentemente visitate, in quanto riduce i tempi di caricamento e migliora l'esperienza utente.
+    \item \textbf{Preconnecting}: Il preconnecting è una tecnica che consiste nel stabilire in anticipo una connessione con i server delle risorse, in modo da ridurre i tempi di latenza e migliorare le prestazioni. Ad esempio, un browser potrebbe preconnettersi ai server di un servizio di streaming video, in modo da ridurre i tempi di buffering durante la riproduzione.
+    \item \textbf{Adaptive loading}: L'adaptive loading è una tecnica che si adatta dinamicamente alle condizioni di rete e alle risorse disponibili, caricando le risorse in base alla larghezza di banda e alla velocità di connessione dell'utente. Ad esempio, un'applicazione potrebbe caricare immagini di dimensioni diverse in base alla velocità di connessione, per garantire un'esperienza utente fluida anche su connessioni lente.
+    \item \textbf{Service workers prefetching}: I service workers sono script JavaScript che girano in background nel browser e consentono di gestire in modo avanzato le richieste di rete e la cache delle risorse. I service workers possono essere utilizzati per implementare tecniche di speculative loading, come il prefetching delle risorse o il caching delle risposte, per migliorare le performance e l'esperienza utente.
+\end{itemize}
+
+\subsection{Selezione delle risorse da precaricare}
+La selezione delle risorse da precaricare viene principalmente svolta in due modalità.
+Innanzitutto, alcuni browser prerenderizzano automaticamente le pagine in base a determinate euristiche per migliorare le performance. Ad esempio, Chrome può prerenderizzare pagine quando vengono digitate stringhe nell'indirizzo, se ha una forte previsione che l'utente le visiterà. Inoltre, può prerenderizzare pagine di risultati di ricerca quando il motore di ricerca lo richiede, utilizzando la \href{https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API}{Speculation Rules API}
+
+Successivamente, gli sviluppatori possono fornire indicazioni specifiche attraverso varie funzionalità della piattaforma, decidendo autonomamente e in base ai propri criteri le strategie, tra quelle illustrate in precedenza, da adottare. Ad esempio, è possibile utilizzare il tag \texttt{<link rel="prefetch">} per indicare al browser di precaricare una risorsa, o il tag \texttt{<link rel="prerender">} per indicare di prerenderizzare una pagina.
+
+

@@ -1,10 +1,13 @@
 \chapter{Ottimizzazione delle performance}
-\color{red} performance bla bla bla \color{black}
+%introduzione per quanto riguarda l'importanza delle performance, in relazione alle tecniche di ottimizzazione come il code splitting, il lazyloading e lo speculative laoding
+
+Le performance delle applicazioni web sono un aspetto critico per garantire un'esperienza utente ottimale. Tempi di caricamento più veloci, maggiore reattività e una migliore gestione delle risorse sono fondamentali per mantenere gli utenti impegnati e soddisfatti. In questo contesto, l'ottimizzazione delle performance è diventata una priorità per gli sviluppatori web, che cercano di ridurre i tempi di caricamento, migliorare la fluidità delle applicazioni e ottimizzare l'uso delle risorse.
 
 \input{chapters/performance/lazyloading}
 \input{chapters/performance/codesplitting}
+\input{chapters/performance/speculativeloading}
 
-\subsection{Impatto sulle performance}
+\section{Impatto sulle performance}
 
 Vantaggi di Code Splitting e Lazy Loading:
 \begin{itemize}
@@ -25,6 +28,3 @@ Sfide e svantaggi:
 Alcuni studi dimostrano l'importanza di implementare correttamente queste tecniche. Ad esempio, un test su WordPress ha rilevato che disabilitare il lazy loading migliorava il LCP su pagine di archivio del 13-15\%, mentre l'abilitazione del lazy loading riduceva la quantità di dati immagine caricati, migliorando la banda utilizzata, ma a scapito di un ritardo nel caricamento delle immagini principali
 
 Nel complesso, quando usate correttamente, queste tecniche forniscono un ottimo equilibrio tra prestazioni e esperienza utente, ma richiedono un'implementazione oculata per evitare effetti indesiderati.
-
-\color{red} \section{Speculative loading} \color{black}
-\href{https://developer.mozilla.org/en-US/docs/Web/Performance/Speculative_loading}{Speculative Loading}

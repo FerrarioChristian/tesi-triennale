@@ -46,13 +46,13 @@ l'indicizzazione SEO. Dall'altro, il CSR consente di sviluppare applicazioni pi�
 parte del lavoro computazionale dal server al browser dell'utente.
 
 Un'altra esigenza critica delle moderne architetture web è l'ottimizzazione del caricamento delle risorse, che ha
-portato all'adozione di tecniche come il lazy loading e il code splitting. Questi approcci consentono di caricare solo
+portato all'adozione di tecniche come il lazy loading, il code splitting e lo speculative loadin. Questi approcci consentono di caricare solo
 le parti dell'applicazione necessarie, riducendo il tempo di caricamento iniziale e migliorando l'esperienza utente,
 soprattutto su dispositivi con risorse limitate.
 
 In questo contesto, l'adozione di architetture flessibili e performanti è diventata essenziale per lo sviluppo di
 applicazioni web che possano soddisfare gli standard moderni in termini di reattività, scalabilità e usabilità. Questo
-studio intende esplorare tali architetture e le tecniche di ottimizzazione correlate, con l'obiettivo di fornire una
+elaborato intende esplorare tali architetture e le tecniche di ottimizzazione correlate, con l'obiettivo di fornire una
 comprensione approfondita delle sfide e delle opportunità legate allo sviluppo di applicazioni web efficienti e
 scalabili.
 
@@ -61,30 +61,33 @@ scalabili.
 \phantomsection
 \section*{Struttura della tesi}
 \addcontentsline{toc}{section}{Struttura della tesi}
-
-\color{red}
-
-
 La tesi è strutturata in cinque capitoli principali, ciascuno dei quali affronta un aspetto specifico delle architetture
 web moderne e delle tecniche di ottimizzazione correlate.
 
-Il primo capitolo introduce il contesto generale delle architetture web moderne, analizzando le principali differenze tra
+Il primo capitolo presenta le fondamenta dello sviluppo web, iniziando con una panoramica del JavaScript runtime
+environment, analizzando il funzionamento del JavaScript engine, entrando nel dettaglio di come il codice viene eseguito
+e ottimizzato, e spiegando il concetto di Execution Context e l'Event Loop. 
+Vengono esaminate le Web APIs, un insieme di interfacce e metodi che permettono ai programmatori di interagire con il browser e manipolare il DOM. Viene trattato il Document Object Model (DOM), una rappresentazione gerarchica dei documenti HTML e XML, che consente di manipolare la struttura e il contenuto di una pagina web.
+Vengono esaminate le caratteristiche fondamentali del runtime environment di JavaScript, con particolare attenzione alla gestione delle operazioni asincrone e alla gestione degli eventi.
+
+Il secondo capitolo esplora le gestione delle operazioni asincrone, analizzando il concetto di Promises, oggetti che
+rappresentano il completamento o il fallimento di operazioni asincrone. Vengono analizzati i principi fondamentali delle
+Promises, con esempi pratici di utilizzo per la gestione di chiamate asincrone, e le best practices per scrivere codice pulito e leggibile.
+
+Il terzo capitolo introduce il contesto generale delle architetture web moderne, analizzando le principali differenze tra
 Server-Side Rendering (SSR) e Client-Side Rendering (CSR), e presentando le architetture ibride come soluzione
 intermedia. Vengono esaminate le caratteristiche, i vantaggi e gli svantaggi di ciascuna architettura, con particolare
 attenzione al confronto tra SSR e CSR in termini di prestazioni, usabilità e indicizzazione SEO.
 
-Il secondo capitolo approfondisce il concetto di hydration, una tecnica utilizzata per convertire pagine HTML statiche in
+\color{black}
+
+Il quarto capitolo approfondisce il concetto di hydration, una tecnica utilizzata per convertire pagine HTML statiche in
 pagine web dinamiche post-rendering. Viene spiegato il funzionamento di questa tecnica, con particolare attenzione al
 collegamento di event handlers agli elementi della pagina, per garantire un'interattività completa anche dopo il
 rendering iniziale.
 
-Il terzo capitolo esplora le gestione delle Promises in JavaScript, oggetti che rappresentano il completamento o il
-fallimento di operazioni asincrone. Vengono analizzati i principi fondamentali delle Promises, con esempi pratici di
-utilizzo per la gestione di chiamate asincrone, e le best practices per scrivere codice pulito e leggibile.
-
-Il quarto capitolo si concentra sulle tecniche di ottimizzazione delle performance, come il code splitting e il lazy
-loading, che consentono di migliorare il caricamento delle risorse e l'esperienza utente. Vengono esaminate le
-caratteristiche di queste tecniche, i vantaggi che offrono e le modalità di implementazione in applicazioni web moderne.
+Il quinto capitolo si concentra sulle tecniche di ottimizzazione delle performance: il code splitting, il lazy
+loading e lo speculative loading, che consentono di migliorare il caricamento delle risorse e l'esperienza utente. Vengono esaminate le caratteristiche di queste tecniche, i vantaggi che offrono e le modalità di implementazione in applicazioni web moderne.
 
 Il quinto capitolo analizza l'Event Loop e l'Execution Context di JavaScript, due concetti fondamentali per la
 comprensione del comportamento delle applicazioni con componenti asincrone. Viene spiegato il funzionamento

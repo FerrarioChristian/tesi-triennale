@@ -1,8 +1,8 @@
-\section{Web API}
-La Web API è un insieme di interfacce e metodi che permettono ai programmatori di interagire con il browser e manipolare il DOM. Queste API consentono di creare applicazioni web interattive e dinamiche, gestendo eventi, effetti visivi, richieste HTTP e molto altro. In questo capitolo, verranno esaminate alcune delle API più comuni e utilizzate nello sviluppo di applicazioni web moderne.
+\section{WebAPIs}
+La WebAPI è un insieme di interfacce e metodi che permettono ai programmatori di interagire con il browser e manipolare il DOM. Queste API consentono di creare applicazioni web interattive e dinamiche, gestendo eventi, effetti visivi, richieste HTTP e molto altro. In questo capitolo, verranno esaminate alcune delle API più comuni e utilizzate nello sviluppo di applicazioni web moderne.
 
 \subsection{Document Object Model (DOM)}
-Il Document Object Model (DOM) è una rappresentazione gerarchica dei documenti HTML e XML, che consente di manipolare la struttura e il contenuto di una pagina web. Il DOM è organizzato come un albero di nodi, in cui ogni elemento della pagina è rappresentato da un nodo, con attributi, testo e figli associati. Questa struttura ad albero consente di accedere e modificare gli elementi della pagina in modo dinamico, utilizzando JavaScript.
+Il Document Object Model (DOM) è una rappresentazione gerarchica dei documenti HTML e XML, che consente di manipolare la struttura e il contenuto di una pagina web. Il DOM è organizzato come un grafo ad albero, in cui ogni elemento della pagina è rappresentato da un nodo, con attributi, testo e figli associati. Questa struttura ad albero consente di accedere e modificare gli elementi della pagina in modo dinamico, utilizzando JavaScript.
 
 \subsubsection{Selezione degli elementi}
 Per selezionare gli elementi del DOM, è possibile utilizzare i metodi \textit{document.getElementById()}, \textit{document.getElementsByClassName()} e \textit{document.getElementsByTagName()}, che restituiscono un singolo elemento, una collezione di elementi o una lista di elementi, rispettivamente. Inoltre, è possibile utilizzare il selettore CSS \textit{document.querySelector()} per selezionare un singolo elemento e \textit{document.querySelectorAll()} per selezionare tutti gli elementi corrispondenti al selettore.
@@ -13,31 +13,11 @@ L'oggetto Window rappresenta la finestra del browser e fornisce metodi e proprie
 Esempi di metodi e proprietà dell'oggetto Window includono:
 \begin{itemize}
     \item window.alert(): visualizza un messaggio di avviso all'utente.
-    \item window.prompt(): visualizza un prompt per l'inserimento di dati da parte dell'utente.
-    \item window.location.href: restituisce l'URL della pagina corrente.
     \item window.localStorage: fornisce un'interfaccia per la memorizzazione di dati locali nel browser.
-    \item window.addEventListener(): aggiunge un listener per gestire gli eventi della finestra.
-    \item window.scrollTo(): scorre la finestra fino alla posizione specificata.
-    \item window.open(): apre una nuova finestra del browser.
-    \item window.close(): chiude la finestra corrente.
-    \item window.innerWidth: restituisce la larghezza della finestra del browser.
-    \item window.innerHeight: restituisce l'altezza della finestra del browserr
-    \item window.screen.width: restituisce la larghezza dello schermo del dispositivo.
-    \item window.screen.height: restituisce l'altezza dello schermo del dispositivo.
-    \item window.navigator.userAgent: restituisce le informazioni sull'agente utente del browser.
-    \item window.history.back(): torna alla pagina precedente nella cronologia del browser.
-    \item window.history.forward(): avanza alla pagina successiva nella cronologia del browser. 
-    \item window.history.go(): naviga alla pagina specificata nella cronologia del browser.
-    \item window.history.length: restituisce il numero di pagine nella cronologia del browser.
-    \item window.sessionStorage: fornisce un'interfaccia per la memorizzazione di dati di sessione nel browser.
-    \item window.requestAnimationFrame(): esegue una funzione all'inizio del prossimo frame di animazione.
-    \item window.cancelAnimationFrame(): annulla un'animazione programmata con requestAnimationFrame().
-    \item window.matchMedia(): restituisce un oggetto MediaQueryList che rappresenta una query media corrispondente.
-    \item window.postMessage(): invia un messaggio a un'altra finestra o frame.
-    \item window.print(): apre la finestra di dialogo di stampa del browser.
-    \item window.scrollBy(): scorre la finestra di una quantità specificata.
-    \item window.scroll(): scorre la finestra fino alla posizione specificata.
-    \item window.scrollX: restituisce la posizione orizzontale dello scroll della finestra.
-    \item window.scrollY: restituisce la posizione verticale dello scroll della finestra.
-    \item window.getSelection(): restituisce l'oggetto Selection che rappresenta il testo selezionato nella finestra.
+    \item window.scroll*(): fornisce metodi per lo scorrimento della finestra.
+    \item window.open() / window.close(): apre una nuova finestra / chiude la finestra del browser.
+    \item window.history.*(): fornisce metodi per accedere alla cronologia del browser.
 \end{itemize}
+
+\subsection{NodeJs e file system}
+Queste non sono le uniche API che un JavaScript engine può mettere a disposizione per l'interazione con il browser. Node.js, ad esempio, fornisce un'API per l'interazione con il file system, che consente di leggere e scrivere file, creare directory, gestire i permessi e molto altro. Questa API è particolarmente utile per lo sviluppo di applicazioni server-side e per la gestione dei file di configurazione e dei dati.
