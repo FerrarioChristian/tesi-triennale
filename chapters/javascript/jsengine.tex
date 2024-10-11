@@ -28,12 +28,18 @@ Esistono due macro-categorie di linguaggi di programmazione: quelli interpretati
 Un linguaggio interpretato è un linguaggio il cui codice sorgente viene eseguito direttamente da un interprete.
 L'interprete è il programma che legge il codice sorgente e lo esegue istruzione per istruzione.
 
-Un linguaggio compilato è un linguaggio il cui codice sorgente viene tradotto in un linguaggio macchina, che può essere eseguito direttamente dall'hardware del computer.
-Il compilatore è il programma che traduce il codice sorgente in linguaggio macchina e, durante questa fase di traduzione, effettua delle ottimizzazioni che rendono il codice più efficiente.
+Un linguaggio compilato è un linguaggio il cui codice sorgente viene tradotto in un linguaggio macchina, che può essere
+eseguito direttamente dall'hardware del computer.
+Il compilatore è il programma che traduce il codice sorgente in linguaggio macchina e, durante questa fase di
+traduzione, effettua delle ottimizzazioni che rendono il codice più efficiente.
 
 Ora resta da rispondere alla domanda: JavaScript è un linguaggio interpretato o compilato?
 La risposta è: dipende dal JavaScript Engine che si sta utilizzando.
-In generale si può dire che, quando è stato ideato da Brendan Eich nel 1995, JavaScript era un linguaggio puramente interpretato, siccome il suo utilizzo principale era all'interno dei browser, e con la potenza di calcolo di allora non ci si poteva permettere di aggiungere ulteriore tempo di attesa all'utente a causa della compilazione. Ma negli anni i JavaScript Engine si sono evoluti, e oggi sono in grado di eseguire delle ottimizzazioni simili ad un linguaggio compilato, che rendono il codice più efficiente.
+In generale si può dire che, quando è stato ideato da Brendan Eich nel 1995, JavaScript era un linguaggio puramente
+interpretato, siccome il suo utilizzo principale era all'interno dei browser, e con la potenza di calcolo di allora non
+ci si poteva permettere di aggiungere ulteriore tempo di attesa all'utente a causa della compilazione. Ma negli anni i
+JavaScript Engine si sono evoluti, e oggi sono in grado di eseguire delle ottimizzazioni simili ad un linguaggio
+compilato, che rendono il codice più efficiente.
 
 Questo processo è chiamato Just-In-Time Compilation.
 
@@ -42,13 +48,19 @@ Questo processo è chiamato Just-In-Time Compilation.
 \includegraphics[width=0.9\textwidth]{javascript/jit-compilation.png}
 \paragraph{Just-In-Time Compilation}
 Il Just-In-Time Compilation è una tecnica di ottimizzazione che consiste nel tradurre il codice sorgente in bytecode, e poi eseguirlo. Questo processo permette di eseguire delle ottimizzazioni che rendono il codice più efficiente.
-In particolare, nella compilazione JIT, il codice viene tradotto in bytecode, e poi eseguito. Durante l'esecuzione, un componente apposito, chiamato \textit{monitor}, monitora il codice, e se rileva che una parte del codice può beneficiare di una ottimizzazione (ad esempio una porzione di codice che viene eseguita in più occasioni, o del codice che potrebbe richiedere un elevato tempo computazionale), allora la traduce in linguaggio macchina, la ottimizza, e la sostituisce al bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.
+In particolare, nella compilazione JIT, il codice viene tradotto in bytecode, e poi eseguito. Durante l'esecuzione, un
+componente apposito, chiamato \textit{monitor}, monitora il codice, e se rileva che una parte del codice può beneficiare
+di una ottimizzazione (ad esempio una porzione di codice che viene eseguita in più occasioni, o del codice che potrebbe
+richiedere un elevato tempo computazionale), allora la traduce in linguaggio macchina, la ottimizza, e la sostituisce al
+bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.
 
 
 \subsection{Esecuzione}
-Come abbbiamo visto in precedenza, la compilazione e l'esecuzione del codice sono strettamente legate, e avvengono in maniera simultanea. Il codice sorgente viene tradotto in bytecode, e poi eseguito dal motore JavaScript.
+Come abbbiamo visto in precedenza, la compilazione e l'esecuzione del codice sono strettamente legate, e avvengono in
+maniera simultanea. Il codice sorgente viene tradotto in bytecode, e poi eseguito dal motore JavaScript.
 Ora vediamo nel dettaglio come avviene l'esecuzione del codice.
-Innanzitutto è necessario presentare due concetti chiave: la Memory Heap e il Call Stack, che sono due componenti fondamentali non solo di un JavaScript Engine, ma di qualsiasi motore di esecuzione di un linguaggio di programmazione.
+Innanzitutto è necessario presentare due concetti chiave: la Memory Heap e il Call Stack, che sono due componenti
+fondamentali non solo di un JavaScript Engine, ma di qualsiasi motore di esecuzione di un linguaggio di programmazione.
 
 \subsection{Garbage Collection}
 \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management}{\color{blue}{Mark and sweep algorithm}}
