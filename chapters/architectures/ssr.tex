@@ -1,7 +1,30 @@
 \section{Server Side Rendering (SSR)}
-SSR, o rendering lato server, è una tecnica di rendering alternativa in cui il server genera una pagina HTML completamente renderizzata per ogni richiesta e la invia al client. In SSR, il server gestisce sia il rendering che i processi di recupero dati, assicurando che il client riceva una pagina completa e pronta per la visualizzazione.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{architectures/SSR.png}
+    \caption{Processo di rendering lato server (SSR)}
+    \label{fig:SSR}
+\end{figure}
+
+Il SSR, o rendering lato server, è una tecnica di rendering alternativa in cui il server genera una pagina HTML
+completamente renderizzata per ogni richiesta e la invia al client.\\ 
+Nel SSR, il server gestisce sia il rendering che i processi di recupero dati, assicurando che il client riceva una pagina completa e pronta per la visualizzazione.\\
+Nella figura \ref{fig:SSR} è mostrato il processo di rendering lato server.
+
+\color{red}
+
 Vantaggi di SSR:
-SEO migliorato: i crawler dei motori di ricerca possono facilmente analizzare la pagina HTML completamente renderizzata, rendendo SSR favorevole per i siti Web che si basano in modo significativo sul traffico di ricerca organico. Questo approccio garantisce che i motori di ricerca indicizzino il contenuto in modo accurato e completo.
-Prestazioni di caricamento iniziale: SSR può fornire prestazioni di caricamento iniziale migliori rispetto a CSR perché il server invia una pagina completamente renderizzata. Ciò può essere particolarmente utile per siti Web o applicazioni con molti contenuti in cui i tempi di caricamento rapidi della pagina sono cruciali.
+SEO migliorato: i crawler dei motori di ricerca possono facilmente analizzare la pagina HTML completamente renderizzata,
+rendendo SSR favorevole per i siti Web che si basano in modo significativo sul traffico di ricerca organico. Questo
+approccio garantisce che i motori di ricerca indicizzino il contenuto in modo accurato e completo.
+Prestazioni di caricamento iniziale: SSR può fornire prestazioni di caricamento iniziale migliori rispetto a CSR perché
+il server invia una pagina completamente renderizzata. Ciò può essere particolarmente utile per siti Web o applicazioni
+con molti contenuti in cui i tempi di caricamento rapidi della pagina sono cruciali.
 Esempio di SSR:
-Immagina un sito Web di e-commerce con vari elenchi di prodotti. Con SSR, quando un utente visita una pagina di prodotto, il server esegue il rendering dell'HTML completo, incluse le informazioni sul prodotto, le immagini e i dati rilevanti. Ciò garantisce che l'utente veda immediatamente l'intera pagina, indipendentemente dalla potenza di elaborazione del dispositivo o dalla velocità di Internet.
+Immagina un sito Web di e-commerce con vari elenchi di prodotti. Con SSR, quando un utente visita una pagina di
+prodotto, il server esegue il rendering dell'HTML completo, incluse le informazioni sul prodotto, le immagini e i dati
+rilevanti. Ciò garantisce che l'utente veda immediatamente l'intera pagina, indipendentemente dalla potenza di
+elaborazione del dispositivo o dalla velocità di Internet.
+
+\color{black}

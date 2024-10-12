@@ -1,9 +1,51 @@
 \section{Confronto tra le architetture}
-Scelta dell'approccio giusto
-La scelta tra CSR e SSR dipende dai requisiti specifici del tuo progetto. Ecco alcune considerazioni chiave:
-Complessità dell'applicazione: CSR è adatta per applicazioni dinamiche e altamente interattive, come applicazioni a pagina singola (SPA) o strumenti di collaborazione in tempo reale. SSR, d'altro canto, è adatta per siti Web o applicazioni incentrati sui contenuti che richiedono eccellenti prestazioni SEO.
-Tempo per il primo rendering: se fornire un rapido caricamento iniziale della pagina è una priorità, SSR può essere vantaggioso. Tuttavia, se le interazioni successive e la reattività sono cruciali, CSR potrebbe essere la scelta migliore.
-Sviluppo e manutenzione: CSR può essere più complesso da implementare e mantenere a causa della separazione della logica client e server. SSR semplifica lo sviluppo poiché richiede meno dipendenze JavaScript e consente un debug e un test più semplici.
-Client-Side Rendering (CSR) e Server-Side Rendering (SSR) sono due importanti tecniche di rendering nello sviluppo web, ciascuna con i suoi vantaggi unici. CSR eccelle in interattività e prestazioni, mentre SSR offre vantaggi in SEO e prestazioni di caricamento iniziale.
-Comprendendo le differenze e considerando i requisiti del tuo progetto, puoi prendere una decisione informata su quale approccio di rendering si adatta meglio alle tue esigenze.
-Ricorda che esistono anche approcci ibridi, come Static Site Generation (SSG) e Incremental Static Regeneration (ISR), e possono fornire opzioni aggiuntive da esplorare per strategie di rendering ottimali in scenari specifici.
+
+Come visto nelle sezioni precedenti, le architetture di rendering presentano vantaggi e svantaggi specifici.
+Per facilitare la comprensione delle differenze tra le varie tecniche, è utile confrontarle in base a diversi aspetti.
+
+\subsection{Confronto tra CSR e rendering lato server}
+Di seguito, vengono esaminati alcuni aspetti chiave per confrontare le varie architetture di rendering.
+È importante notare che le considerazioni specifiche possono variare a seconda del contesto e dei requisiti
+dell'applicazione.\\
+Inoltre, nelle seguenti comparazioni, le tecniche di rendering lato server (SSR, SSG, DSG, ISR) sono considerate come
+un'unica categoria, accorpate sotto il termine SSR.
+
+\paragraph{Tempo di caricamento iniziale}
+Il CSR richiede un tempo di caricamento iniziale più lungo rispetto al SSR, poiché il browser deve scaricare il
+codice JavaScript e renderizzare la pagina.\\
+Al contrario, il SSR fornisce contenuto visibile all'utente più rapidamente, poiché il server invia direttamente
+l'HTML al browser.
+
+\paragraph{Interattività}
+L'interattività è un'altra considerazione importante per le applicazioni web.\\
+Il CSR offre un'interattività più fluida, poiché il client può gestire le interazioni senza dover ricaricare la pagina.\\
+D'altra parte, il SSR richiede un caricamento della pagina per ogni interazione, il che può influire negativamente
+sull'esperienza utente.
+
+\paragraph{SEO}
+Il posizionamento sui motori di ricerca (SEO) è un fattore critico per molte applicazioni web.\\
+Il CSR può presentare sfide in termini di SEO, poiché i motori di ricerca possono avere difficoltà a indicizzare il
+contenuto generato dinamicamente.\\
+Il SSR, invece, fornisce il contenuto renderizzato direttamente al motore di ricerca, facilitando l'indicizzazione e il posizionamento.
+
+\paragraph{Sicurezza}
+Il CSR espone il codice JavaScript al client, il che potrebbe comportare rischi di sicurezza se non gestito
+correttamente.
+Il SSR, invece, mantiene il codice lato server, riducendo il rischio di attacchi basati su JavaScript.
+
+\section{Tabella di confronto}
+Per riassumere le differenze tra le architetture di rendering, viene fornita una tabella di confronto:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Tecnica} & \textbf{Data}        & \textbf{Render}       & \textbf{Cache}            \\ \hline
+    CSR              & Request-time         & Client render         & \multicolumn{1}{c|}{-}    \\ \hline
+    SSR              & Request-time         & Request-time          & Not cached                \\ \hline
+    DSG              & Build-time           & Request-time          & After first request       \\ \hline
+    SSG              & Build-time           & Build-time            & Cached                    \\ \hline
+    ISR              & Request-time         & Request-time          & Cached                    \\ \hline
+    \end{tabular}
+    \caption{Riepilogo delle architetture di rendering}
+\end{table}
