@@ -1,17 +1,9 @@
 \section{Code Splitting}
-
-\color{red}
-Il caricamento di risorse JavaScript di grandi dimensioni influisce significativamente sulla velocità della pagina.
-Suddividere il codice JavaScript in frammenti più piccoli e scaricare solo ciò che è necessario per il funzionamento di
-una pagina durante l'avvio può migliorare notevolmente la reattività del caricamento della pagina.
-\color{black}
-
-\subsection{Cos'è il Code Splitting?}
-La tecnica del Code Splitting, in poche parole, consiste nel dividere il codice JavaScript di grandi dimensioni in
-frammenti più piccoli chiamati \textbf{chunks}, in modo da caricare solo ciò che è necessario per il funzionamento di
-una pagina durante l'avvio rimandando il caricamento degli altri chunk fino a quando il codice non si rende necessario.
-Questo approccio può migliorare notevolmente la reattività del caricamento della pagina, in quanto riduce il tempo
-necessario per scaricare e interpretare il codice JavaScript.
+Il code splitting è una particolare implementazione del concetto di Lazy Loading che, in poche parole, consiste nel
+dividere il codice JavaScript di grandi dimensioni in frammenti più piccoli chiamati \textbf{chunks}, in modo da
+caricare solo ciò che è necessario per il funzionamento di una pagina durante l'avvio rimandando il caricamento degli
+altri chunk fino a quando il codice non si rende necessario.  Questo approccio può migliorare notevolmente la reattività
+del caricamento della pagina, in quanto riduce il tempo necessario per scaricare e interpretare il codice JavaScript.
 
 \subsection{Vantaggi e svantaggi del Code Splitting}
 Alcuni vantaggi del Code Splitting sono:
@@ -23,7 +15,6 @@ Alcuni vantaggi del Code Splitting sono:
 
 Di contro, il Code Splitting può comportare alcuni svantaggi:
 \begin{itemize}
-    \item \textbf{Complessità}: la gestione di più chunk può aumentare la complessità del progetto.
     \item \textbf{Overhead}: il caricamento asincrono dei chunk può comportare un overhead aggiuntivo.
     \item \textbf{Compatibilità}: alcune funzionalità del Code Splitting potrebbero non essere supportate da tutti i browser.
     \item \textbf{Debugging}: il debugging di applicazioni con Code Splitting può essere più complesso.

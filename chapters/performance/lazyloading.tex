@@ -5,8 +5,12 @@
 \begin{wrapfigure}{R}{0.40\textwidth}
     \includegraphics[width=\linewidth]{performance/lazyloading.png} 
     \caption{Image by Google}
+    \label{fig:lazyloading}
 \end{wrapfigure}
-Il Lazy Loading (conosciuto anche come caricamento asincrono) è una strategia per identificare le risorse come non bloccanti (non critiche) e caricarle solo quando necessario. È un modo per abbreviare la lunghezza del \href{https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path}{\textit{critical rendering path}}, che si traduce in tempi di caricamento della pagina ridotti.
+Il Lazy Loading (conosciuto anche come caricamento asincrono) è una strategia per identificare le risorse non bloccanti
+(non critiche) e caricarle solo quando necessario. È un modo per abbreviare la lunghezza del
+\href{https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path}{\textit{critical rendering
+path}}, che si traduce in tempi di caricamento della pagina ridotti.
 
 
 \subsection{Panoramica}
@@ -17,11 +21,28 @@ KB per i dispositivi mobili. Mentre le dimensioni delle immagini sono aumentate 
 100 KB a 850 KB per i dispositivi mobili. Uno dei metodi che possiamo utilizzare per affrontare questo problema è quello
 di accorciare la lunghezza del percorso di rendering critico tramite il caricamento differito delle risorse che non sono
 critiche per il primo rendering. Un esempio pratico sarebbe quando si atterra sulla home page di un sito di e-commerce
-con un collegamento a una pagina/sezione del carrello 18 e nessuna delle risorse della pagina del carrello (come JavaScript, CSS e immagini) viene scaricata finché non si naviga lì.
-\color{black}
+con un collegamento a una pagina/sezione del carrello e nessuna delle risorse della pagina del carrello (come JavaScript, CSS e immagini) viene scaricata finché non si naviga lì.
+
 
 \subsection{Strategie}
 \href{https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#strategies}{\textit{Strategies}}:
+Il Lazy Loading può essere implementato in diversi modi e applicato a diverse risorse.
+Di seguito sono riportate alcune delle strategie più comuni:
+\begin{itemize}
+    \item \textbf{Lazy Loading delle immagini}: Le immagini sono uno dei principali colpevoli delle pagine web pesanti.
+    Inoltre, molto spesso le immagini non sono immediatamente visibili all'utente, poichè sono fuori dalla porzione
+    dello schermo attualmente visualizzato, oppure richiedono un interazione da parte dell'utente (per esempio uno
+    scroll orizzontale su un carosello, o un click). Il Lazy Loading delle immagini consiste nel caricare le immagini
+    solo quando diventano visibili all'utente. Questo può essere fatto utilizzando l'attributo \texttt{loading="lazy"} o
+    utilizzando JavaScript per caricare le immagini solo quando sono visibili all'utente.\\
+    Nella figura \ref{fig:lazyloading}, possiamo vedere una rappresentazione grafica di Lazy Loading applicato alle immagini.
+    \item \textbf{Lazy Loading dei font}: I font personalizzati sono un'altra risorsa che può rallentare il caricamento
+    della pagina. Il Lazy Loading dei font consiste nel caricare i font solo quando sono necessari.
+    \item \textbf{Code Splitting}: Il Code Splitting è una tecnica che consiste nel dividere il codice in diversi
+    \textit{chunks} e caricare solo il codice necessario per la pagina corrente. Questa tecnica verrà discussa nella prossima sezione.
+\end{itemize}
 
-\subsection{Vantaggi e svantaggi del Lazy Loading}
-\subsection{Impatto sulle performance}
+\color{cyan}
+\href{https://web.dev/articles/lcp-lazy-loading}{studio effetti del lazy loading}
+
+\color{black}

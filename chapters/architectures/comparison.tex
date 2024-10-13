@@ -28,6 +28,11 @@ Il CSR può presentare sfide in termini di SEO, poiché i motori di ricerca poss
 contenuto generato dinamicamente.\\
 Il SSR, invece, fornisce il contenuto renderizzato direttamente al motore di ricerca, facilitando l'indicizzazione e il posizionamento.
 
+\paragraph{Carico del server}
+Il CSR sposta gran parte del lavoro di rendering sul client, riducendo il carico del server.\\
+Al contrario, l'SSR richiede al server di generare e inviare l'HTML per ogni richiesta, aumentando il carico del server.\\
+Questo può essere un fattore importante da considerare in termini di scalabilità e costi di hosting.
+
 \paragraph{Sicurezza}
 Il CSR espone il codice JavaScript al client, il che potrebbe comportare rischi di sicurezza se non gestito
 correttamente.
@@ -35,8 +40,8 @@ Il SSR, invece, mantiene il codice lato server, riducendo il rischio di attacchi
 
 \section{Tabella di confronto}
 Per riassumere le differenze tra le architetture di rendering, viene fornita una tabella di confronto:
-
-\begin{table}[H]
+\\
+\begin{table}[h]
     \centering
     \begin{tabular}{|l|l|l|l|}
     \hline

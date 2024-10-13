@@ -14,20 +14,9 @@ manipolazione del Document Object Model (DOM) per aggiornare l'interfaccia utent
 Nella figura \ref{fig:CSR} è mostrato il processo di rendering lato client.
 
 \color{red}
-
-Vantaggi di CSR:
-Interattività migliorata: CSR consente applicazioni Web altamente interattive poiché il client può aggiornare
-l'interfaccia utente senza effettuare richieste aggiuntive al server. Ciò si traduce in un'esperienza utente fluida e
-reattiva.
-Prestazioni migliorate: una volta completato il caricamento iniziale della pagina, le interazioni successive possono
-essere più rapide poiché il rendering lato client evita aggiornamenti completi della pagina. Vengono recuperati solo i
-componenti o i dati necessari, riducendo il carico del server e migliorando le prestazioni complessive.
-Costi di server ridotti: poiché il server invia solo il codice JavaScript e i dati iniziali, il carico del server è
-ridotto rispetto al SSR, in cui il server deve generare l'intera pagina HTML per ogni richiesta.
-
-Esempio di CSR:
+\paragraph{Esempio di CSR:}
 Consideriamo il feed di un social media che deve mostrare un elenco di post. Con CSR, l'HTML e il JavaScript iniziali
 vengono inviati al client. Il codice JavaScript, eseguito sul client, recupera quindi i dati del post da un'API e li
-visualizza dinamicamente nel browser dell'utente. Mentre l'utente scorre, altri post possono essere recuperati in modo asincrono, consentendo una paginazione fluida senza dover ricaricare l'intera pagina.
-
+visualizza dinamicamente nel browser dell'utente. Mentre l'utente scorre, altri post possono essere recuperati in modo
+asincrono, consentendo una paginazione fluida senza dover ricaricare l'intera pagina.
 \color{black}
