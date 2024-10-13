@@ -7,16 +7,33 @@
     \label{fig:CSR}
 \end{figure}
 
-Il CSR, o rendering lato client, è una tecnica in cui il processo di rendering avviene appunto sul client, in genere nel browser Web dell'utente.\\
-In sintesi, il server invia un documento HTML minimo insieme ai file JavaScript al client. Il browser quindi esegue il
-codice JavaScript, il quale è responsabile del recupero dei dati dalle eventuali API, della generazione e della
-manipolazione del Document Object Model (DOM) per aggiornare l'interfaccia utente. \\
-Nella figura \ref{fig:CSR} è mostrato il processo di rendering lato client.
+Il CSR, o rendering lato client, è una tecnica in cui il processo di rendering avviene appunto sul client, in genere nel
+browser Web dell'utente.\\
+In sintesi, quando un utente visita il sito, il server invia un documento HTML minimo insieme ai file JavaScript al
+client. Il browser quindi esegue il codice JavaScript, il quale è responsabile del recupero dei dati dalle eventuali
+API, della generazione e della manipolazione del Document Object Model (DOM) per aggiornare l'interfaccia utente.
+Durante questo processo però, l'utente potrebbe vedere una schermata vuota o parzialmente caricata, in quanto il
+contenuto è ancora in fase di caricamento. Una volta completato il caricamento invece, è possibile interagire con
+l'interfaccia utente senza dover ricaricare l'intera pagina, e quindi senza dover attendere una nuova risposta da parte
+del server.
 
-\color{red}
+Nella figura \ref{fig:CSR} è mostrato il processo di rendering lato client.\\
+Nella figura \ref{fig:CSRHTML} è mostrato un esempio di HTML inviato dal server.
+\vspace{5mm}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{architectures/htmlcode.png}
+    \caption{Esempio di HTML iniziale per CSR}
+    \label{fig:CSRHTML}
+\end{figure}
+\vspace{3mm}
+\newline
+Come si puo' notare, il documento HTML è molto semplice e contiene solo il una \texttt{div} con \texttt{id="root"}, che
+rappresenta il contenitore principale dove verrà inserito il contenuto generato dinamicamente dal codice JavaScript.
+
+
 \paragraph{Esempio di CSR:}
-Consideriamo il feed di un social media che deve mostrare un elenco di post. Con CSR, l'HTML e il JavaScript iniziali
-vengono inviati al client. Il codice JavaScript, eseguito sul client, recupera quindi i dati del post da un'API e li
-visualizza dinamicamente nel browser dell'utente. Mentre l'utente scorre, altri post possono essere recuperati in modo
-asincrono, consentendo una paginazione fluida senza dover ricaricare l'intera pagina.
-\color{black}
+Consideriamo il feed di un social media che deve mostrare un elenco di post. Utilizzando CSR, l'HTML e il JavaScript
+iniziali vengono inviati al client. Il codice JavaScript, eseguito sul client, recupera quindi i dati del post da un'API
+e li visualizza dinamicamente nel browser dell'utente. Mentre l'utente scorre, altri post possono essere recuperati in
+modo asincrono, ed è possibile commentare e mettere like senza dover ricaricare l'intera pagina.

@@ -8,14 +8,10 @@
 \end{figure}
 
 Il SSR, o rendering lato server, è una tecnica di rendering alternativa in cui il server genera una pagina HTML
-completamente renderizzata per ogni richiesta e la invia al client.\\ 
-Nel SSR, il server gestisce sia il rendering che i processi di recupero dati, assicurando che il client riceva una pagina completa e pronta per la visualizzazione.\\
+completamente renderizzata per ogni richiesta e la invia al client.
+Nel SSR il server gestisce sia il rendering che i processi di recupero dati, questo significa che il client riceve un'interfaccia utente completamente renderizzata, riducendo il tempo di caricamento e migliorando l'esperienza utente.
+
 Nella figura \ref{fig:SSR} è mostrato il processo di rendering lato server.
 
-\color{red}
 Esempio di SSR:
-Consideriamo un sito Web di e-commerce con vari elenchi di prodotti. Con SSR, quando un utente visita la pagina di
-un prodotto, il server esegue il rendering dell'HTML completo, incluse le informazioni sul prodotto, le immagini e i
-dati rilevanti. Ciò garantisce che l'utente veda immediatamente l'intera pagina, indipendentemente dalla potenza di
-elaborazione del dispositivo o dalla velocità di Internet.
-\color{black}
+Consideriamo un sito di notizie che deve visualizzare gli articoli in tempo reale. Utilizzando SSR, quando un utente richiede la pagina di un articolo, il server recupera immediatamente i dati più recenti dal database, genera l'HTML completo con il contenuto dell'articolo e lo invia al client. Siccome gli articoli cambiano frequentemente ma non richiedono interazione immediata e intensa come in un'applicazione dinamica (ad esempio un social media), il SSR è un'ottima scelta per garantire tempi di caricamento rapidi.

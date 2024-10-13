@@ -1,9 +1,26 @@
 \section{Diverse tecniche di Hydration}
+L'esempio precedente illustra il principio dell'hydration (Full Hydration), ma ci sono diverse tecniche per implementarlo. In questa sezione sono presentate alcune delle tecniche più comuni per l'hydration di una pagina web.
 
 \begin{itemize}
-    \item Streaming SSR
-    \item Progressive Hydration
-    \item Partial Hydration
-    \item Full Hydration
-    \item Trisomorphic Hydration
+    \item \textbf{Streaming SSR}: Con lo streaming server-side rendering, l'HTML viene inviato al client a pezzi,
+    permettendo al browser di renderizzare progressivamente il contenuto man mano che viene ricevuto. Questo approccio
+    migliora i tempi di "first paint" e "first contentful paint", poiché l'HTML arriva agli utenti più velocemente,
+    migliorando così l'esperienza utente.
+    \item \textbf{Trisomorphic Hydration}: Il rendering trisomorfico combina lo streaming SSR per le prime navigazioni
+    non basate su JavaScript con l'utilizzo di un service worker per il rendering delle pagine nelle successive
+    navigazioni. Il service worker si occupa di mantenere aggiornati i componenti e i template in cache, abilitando
+    navigazioni in stile Single Page Application (SPA) per nuove viste nella stessa sessione.
+    \item \textbf{Progressive Hydration}: La reidratazione progressiva permette a diverse parti di un'applicazione
+    renderizzata lato server di "attivarsi" gradualmente nel tempo, invece di inizializzare l'intera applicazione in una
+    volta sola. Questo riduce la quantità di JavaScript necessaria per rendere interattive le pagine, poiché le parti
+    meno prioritarie possono essere caricate in seguito, senza bloccare il thread principale, consentendo di ridurre il TTI.
+    \item \textbf{Partial Hydration}: La reidratazione parziale estende l'idea della reidratazione progressiva. In questo caso, le varie parti dell'applicazione vengono analizzate, e quelle con poca o nessuna interattività vengono trattate in modo da ridurre al minimo il footprint JavaScript lato client. Tuttavia, questa tecnica presenta sfide, come la gestione della cache e la navigazione client-side, poiché l'HTML server-rendered per le parti "statiche" potrebbe non essere sempre disponibile senza un caricamento completo della pagina. Questa definizione potrebbe non essere chiara a primo impatto, ma la figura \ref{fig:partial-hydration} illustra chiaramente il risultato finale.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{hydration/full-partial-hydration.png}
+    \caption{Esempio di reidratazione parziale}
+    \label{fig:partial-hydration}
+\end{figure}
+

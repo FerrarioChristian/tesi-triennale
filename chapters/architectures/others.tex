@@ -1,21 +1,25 @@
 \section{Ulteriori tecniche di rendering}
 
-%magari aggiungere un introduzione e cambiare i paragrafi in sottosezioni
-% //TODO
-
-\paragraph{Approccio Ibrido}: Innanzitutto è utile far notare la possibilità di utilizzare aprrocci ibridi, che
+% aggiungere un introduzione e cambiare i paragrafi in sottosezioni
+Innanzitutto è utile far notare la possibilità di utilizzare aprrocci ibridi, che
 combinano i vantaggi di CSR e SSR per fornire un'esperienza utente ottimale, valutando i compromessi tra interattività e
 prestazioni. Un esempio di approccio ibrido è il rendering lato server con \emph{hydration} lato client, una tecnica spiegata nel dettaglio nel prossimo capitolo, \nameref{ch:hydration}.
 
-\paragraph{Static Site Generation (SSG)}: Il SSG è una tecnica di rendering che consente di generare pagine statiche in
-fase di compilazione. Con SSG, le pagine vengono generate in anticipo (in fase di build/deploy) e vengono servite ai
+In aggiunta alle tecniche di rendering discusse precedentemente, esistono altre tecniche che possono essere utilizzate per ottimizzare il rendering di un'applicazione web.
+Queste tecniche possono essere utilizzate singolarmente o combinate per ottenere il massimo delle prestazioni e dell'interattività. In questa sezione, esamineremo alcune di queste tecniche e discuteremo i loro vantaggi e svantaggi.
+
+
+\subsection{Static Site Generation (SSG)}
+Il SSG è una tecnica di rendering che consente di generare pagine statiche in
+fase di compilazione. Con l'SSG, le pagine vengono generate in anticipo (in fase di build/deploy) e vengono servite ai
 visitatori senza la necessità di eseguire codice lato server. Questo approccio consente di ridurre i tempi di
 caricamento, di ridurre il carico del server e di migliorare le prestazioni, a discapito della disponibilità di
 contenuti aggiornati all'ultima versione.\\
 Questa tecnica è particolarmente utile per siti Web con contenuti statici o che non richiedono aggiornamenti frequenti,
 ad esempio siti di documentazione o blog.
 
-\paragraph{Incremental Static Regeneration (ISR)}: L'ISR è una tecnica di rendering ibrida che combina i vantaggi di SSG
+\subsection{Incremental Static Regeneration (ISR)}
+L'ISR è una tecnica di rendering ibrida che combina i vantaggi di SSG
 e SSR. Nell'ISR, le pagine vengono generate staticamente, le pagine statiche vengono generate in fase di build, ma
 possono essere rigenerate incrementalmente, su richiesta, in modo da riflettere i nuovi contenuti senza dover
 ricostruire l'intero sito. Questo approccio permette di mantenere performance elevate, poiché le pagine sono servite
@@ -25,7 +29,8 @@ aggiornamenti in tempo reale, come e-commerce o siti di news, in cui alcune pagi
 traffico e alle necessità, mantenendo la freschezza dei contenuti, ma senza dover rigenerare l'intero sito ad ogni
 modifica.
 
-\paragraph{Deferred Static Generation (DSG)}: La DSG è una tecnica di rendering che ottimizza ulteriormente il processo
+\subsection{Deferred Static Generation (DSG)}
+La DSG è una tecnica di rendering che ottimizza ulteriormente il processo
 di generazione statica, permettendo di differire la generazione di alcune pagine fino a quando non vengono
 effettivamente richieste dagli utenti. 
 Quando una pagina \emph{deferred} viene richiesta per la prima volta, viene generata staticamente al volo e servita all'utente. Successivamente, quella pagina viene memorizzata in cache e servita come una normale pagina statica, senza necessità di ulteriore rendering.\\
