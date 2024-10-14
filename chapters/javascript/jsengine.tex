@@ -1,7 +1,5 @@
 \section{JavaScript Engine}
-
-Ogni browser ha il proprio JavaScript Engine, che implementa lo standard ECMAScript.
-Il JavaScript Engine è il cuore del JavaScript Runtime Environment.
+Il JavaScript Engine è il cuore del JavaScript Runtime Environment, il componente che si occupa di eseguire il codice JavaScript.
 Quando viene scritto del codice JavaScript, esso non viene esguito direttamente dall'hardware del computer,
 ma passa attraverso il JavaScript Engine, che lo traduce in istruzioni che il computer può eseguire.
 Questo processo avviene in tre fasi:
@@ -12,15 +10,24 @@ Questo processo avviene in tre fasi:
 \end{enumerate}
 
 \subsection{Parsing}
+\begin{wrapfigure}{R}{0.3\textwidth}
+    \includegraphics[width=\linewidth]{javascript/ast-code.png}
+    \caption{Codice corrispondente all'AST in figura \ref{fig:ast}}
+    \label{fig:astcode}
+\end{wrapfigure}
 Nella fase di parsing, il codice viene scomposto in token, che sono i blocchi di base del codice.
 Dopo di che, i token vengono analizzati dal Syntax Parser, e trasformati in un Abstract Syntax Tree.
-L'AST è una rappresentazione ad albero del codice sorgente, che permette al motore JavaScript di capire come eseguire il codice.
+L'AST è una rappresentazione ad albero del codice sorgente, che permette al motore JavaScript di capire come eseguire il codice. Nelle figure \ref{fig:astcode} e \ref{fig:ast} è presentato un esempio di codice JavaScript e il suo AST corrispondente.
 
-\textbf{Esempio e spiegazione di AST:}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=15cm]{javascript/AST.png} 
+    \caption{Abstract Syntax Tree del codice in figura \ref{fig:astcode}}
+    \label{fig:ast}
+\end{figure}
 
 \subsection{Compilazione}
-Prima di entrare nel dettaglio della fase di compilazione, è necessario chiarire alcuni concetti chiave.
+Nella fase di compilazione, l'AST viene tradotto in bytecode, oppure in linguaggio macchina, in base alle ottimizzazioni che il motore JavaScript decide di applicare. In questa sezinoe sono presentate le differenze tra interpreti e compilatori, e come il JavaScript Engine utilizza entrambe le tecniche per eseguire il codice JavaScript.
 
 \paragraph{Interpreters e Compilers}
 Esistono due macro-categorie di linguaggi di programmazione: quelli interpretati e quelli compilati.
@@ -43,11 +50,10 @@ compilato, che rendono il codice più efficiente.
 
 Questo processo è chiamato Just-In-Time Compilation.
 
-\href{https://medium.com/@aamchora/what-exactly-just-in-time-jit-compilation-is-in-javascript-f7aea482843f}{\color{red}{Approfondimento su JIT Compilation e schema, magari inserire pro e contro di interpreseter e compiler}}
 
 \begin{figure}
     \includegraphics[width=0.9\textwidth]{javascript/jit-compilation.png}
-    \caption{Just-In-Time Compilation}
+    \caption{Just-In-Time Compilation} 
     \label{fig:jit_compilation}
 \end{figure}
 
@@ -57,7 +63,8 @@ In particolare, nella compilazione JIT, il codice viene tradotto in bytecode, e 
 componente apposito, chiamato \textit{monitor}, monitora il codice, e se rileva che una parte del codice può beneficiare
 di una ottimizzazione (ad esempio una porzione di codice che viene eseguita in più occasioni, o del codice che potrebbe
 richiedere un elevato tempo computazionale), allora la traduce in linguaggio macchina, la ottimizza, e la sostituisce al
-bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.
+bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.\\
+Nella figura \ref{fig:jit_compilation} è rappresentato uno schema del processo di Just-In-Time Compilation.
 
 
 \subsection{Esecuzione}
@@ -67,8 +74,19 @@ Ora vediamo nel dettaglio come avviene l'esecuzione del codice.
 Innanzitutto è necessario presentare due concetti chiave: la Memory Heap e il Call Stack, che sono due componenti
 fondamentali non solo di un JavaScript Engine, ma di qualsiasi motore di esecuzione di un linguaggio di programmazione.
 
+\vspace{5mm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{javascript/stack-heap-pointers.png}
+    \caption{Memory Heap e Call Stack}
+    \label{fig:memory_heap_call_stack}
+\end{figure}
+
+\subsubsection{Memory Heap}
+Il Memory Heap è lo spazio di memoria in cui vengono allocate le variabili e gli oggetti in JavaScript. Quando il codice viene eseguito, il motore JavaScript alloca spazio di memoria per le variabili e gli oggetti, e li memorizza nel Memory Heap. È una struttura di memoria non strutturata in cui gli oggetti vengono allocati in un modo relativamente disordinato, quando un oggetto non è più necessario, il motore JavaScript dealloca lo spazio di memoria occupato da quell'oggetto. Questo processo è chiamato garbage collection, e verrà discusso tra poco.
+
+\subsubsection{Call Stack}
+Il Call Stack è una struttura dati a pila che tiene traccia delle chiamate di funzione in un programma. Quando una funzione viene chiamata, il motore JavaScript aggiunge un frame di attivazione alla cima dello stack, e quando la funzione ritorna, il frame di attivazione viene rimosso dallo stack. Questo processo è chiamato \textit{push} e \textit{pop} dallo stack. Il Call Stack è una struttura dati a pila, il che significa che le chiamate di funzione vengono gestite in ordine LIFO (Last In, First Out), cioè l'ultima funzione chiamata è la prima a ritornare.
+
 \subsection{Garbage Collection}
 \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management}{\color{blue}{Mark and sweep algorithm}}
-
-\subsection{IDK}
-Prendendo in esempio il JavaScript Engine V8, sviluppato da Google per il browser Chrome e utilizzato anche da NodeJs, il codice sorgente viene prima di tutto analizzato dal parser, e tras
