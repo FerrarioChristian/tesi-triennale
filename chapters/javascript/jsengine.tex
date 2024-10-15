@@ -35,10 +35,24 @@ Esistono due macro-categorie di linguaggi di programmazione: quelli interpretati
 Un linguaggio interpretato è un linguaggio il cui codice sorgente viene eseguito direttamente da un interprete.
 L'interprete è il programma che legge il codice sorgente e lo esegue istruzione per istruzione.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{javascript/interprete.png}
+    \caption{Processo di interpretazione}
+    \label{fig:interpreter}
+\end{figure}
+
 Un linguaggio compilato è un linguaggio il cui codice sorgente viene tradotto in un linguaggio macchina, che può essere
 eseguito direttamente dall'hardware del computer.
 Il compilatore è il programma che traduce il codice sorgente in linguaggio macchina e, durante questa fase di
 traduzione, effettua delle ottimizzazioni che rendono il codice più efficiente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{javascript/compilazione.png}
+    \caption{Processo di compilazione}
+    \label{fig:compiler}
+\end{figure}
 
 Ora resta da rispondere alla domanda: JavaScript è un linguaggio interpretato o compilato?
 La risposta è: dipende dal JavaScript Engine che si sta utilizzando.
@@ -50,10 +64,10 @@ compilato, che rendono il codice più efficiente.
 
 Questo processo è chiamato Just-In-Time Compilation.
 
-
-\begin{figure}
+\vspace{5mm}
+\begin{figure}[H]
     \includegraphics[width=0.9\textwidth]{javascript/jit-compilation.png}
-    \caption{Just-In-Time Compilation} 
+    \caption{Processo di interpretazione con Just-In-Time compilation} 
     \label{fig:jit_compilation}
 \end{figure}
 

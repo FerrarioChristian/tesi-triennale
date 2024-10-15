@@ -4,6 +4,15 @@ Il processo di hydration è relativamente semplice a livello concettuale, ma pu�
 Come visto in precedenza, il processo di hydration è composto da due fasi: la prima fase è la renderizzazione del contenuto lato server, mentre la seconda fase è la vera e propria hydration del contenuto lato client.
 
 \subsection{Prima fase: renderizzazione lato server}
+
+\vspace{5mm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{hydration/first-render.png}
+    \caption{Scambio di dati tra server e client durante il primo render}
+    \label{fig:ytcsr}
+\end{figure}
+
 La prima fase è la renderizzazione del contenuto lato server. In questa fase, il server genera il codice HTML di base per la pagina web, ma a differenza del CSR, la pagina generata non è vuota. Invece, il server genera il codice HTML con il contenuto iniziale della pagina, che nel caso di YouTube è priva di dati veri e propri, ma contiene solo il layout di base della pagina, come mostrato in figura~\ref{fig:ytskeleton}, ma nel caso di pagine come dashboard amministrative, la pagina potrebbe contenere i dati reali iniziali.
 
 \vspace{5mm}
@@ -18,6 +27,15 @@ La prima fase è la renderizzazione del contenuto lato server. In questa fase, i
 A questo punto del processo, la pagina web ha raggiunto quella che si chiama \emph{First Contentful Paint} (FCP), ovvero il momento in cui il browser inizia a visualizzare il contenuto della pagina. Questo è un concetto importante per l'esperienza utente, perchè è il momento in cui l'utente percepisce che la pagina sta caricando, e nonostante la pagina non sia ancora pronta ed interattiva, è comunque meglio della pagina bianca che si ottiene con il CSR.
 
 \subsection{Seconda fase: hydration lato client}
+
+\vspace{5mm}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{hydration/second-render.png}
+    \caption{Scambio di dati tra server e client durante l'hydration}
+    \label{fig:ythydration}
+\end{figure}
+
 La seconda fase è la hydration del contenuto lato client. In questa fase, il client esegue il codice JavaScript, inizia
 a scaricare i dati necessari per popolare la pagina e ad aggiungere gli event handler, e una volta che i dati sono stati
 scaricati, il client aggiorna l'albero DOM. Questo processo è chiamato hydration, perchè il client "idrata" la pagina statica con i dati necessari per renderizzarla completamente e renderla interattiva.

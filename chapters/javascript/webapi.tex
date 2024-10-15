@@ -1,6 +1,6 @@
 \section{WebAPIs}
-La WebAPI è un insieme di interfacce e metodi che permettono ai programmatori di interagire con il browser e manipolare
-il DOM. Queste API consentono di creare applicazioni web interattive e dinamiche, gestendo eventi, effetti visivi,
+La WebAPI è un insieme di interfacce e metodi che permettono ai programmatori di interagire con il browser, manipolare
+il DOM e accedere a funzionalità esterne al liguaggio JavaScript, come \emph{fetch HTTP}, \emph{localStorage}, \emph{bluetooth} e altre. Queste API consentono di creare applicazioni web interattive e dinamiche, gestendo eventi, effetti visivi,
 richieste HTTP e molto altro. In questo capitolo, verranno esaminate alcune delle API più comuni e utilizzate nello
 sviluppo di applicazioni web moderne.
 
@@ -11,11 +11,12 @@ pagina è rappresentato da un nodo, con attributi, testo e figli associati. Ques
 accedere e modificare gli elementi della pagina in modo dinamico, utilizzando JavaScript.
 
 \subsubsection{Selezione degli elementi}
-Per selezionare gli elementi del DOM, è possibile utilizzare i metodi \textit{document.getElementById()},
-\textit{document.getElementsByClassName()} e \textit{document.getElementsByTagName()}, che restituiscono un singolo
+Per selezionare gli elementi del DOM, è possibile utilizzare i metodi \textit{getElementById()},
+\textit{getElementsByClassName()} e \textit{getElementsByTagName()}, che restituiscono un singolo
 elemento, una collezione di elementi o una lista di elementi, rispettivamente. Inoltre, è possibile utilizzare il
 selettore CSS \textit{document.querySelector()} per selezionare un singolo elemento e
-\textit{document.querySelectorAll()} per selezionare tutti gli elementi corrispondenti al selettore.
+\textit{querySelectorAll()} per selezionare tutti gli elementi corrispondenti al selettore.
+Questi metodi sono accessibili tramite l'oggetto \textit{document}, che rappresenta il documento corrente.
 
 \subsection{Window object}
 L'oggetto Window rappresenta la finestra del browser e fornisce metodi e proprietà per interagire con essa. Alcune delle funzionalità più comuni offerte dall'oggetto Window includono la gestione degli eventi, la manipolazione del DOM, la gestione dei cookie e la navigazione tra le pagine.
