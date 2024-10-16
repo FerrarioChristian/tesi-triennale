@@ -21,7 +21,7 @@ L'AST è una rappresentazione ad albero del codice sorgente, che permette al mot
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=15cm]{javascript/AST.png} 
+    \includegraphics[width=\textwidth]{javascript/AST.png} 
     \caption{Abstract Syntax Tree del codice in figura \ref{fig:astcode}}
     \label{fig:ast}
 \end{figure}
@@ -35,6 +35,7 @@ Esistono due macro-categorie di linguaggi di programmazione: quelli interpretati
 Un linguaggio interpretato è un linguaggio il cui codice sorgente viene eseguito direttamente da un interprete.
 L'interprete è il programma che legge il codice sorgente e lo esegue istruzione per istruzione.
 
+\vspace{5mm}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{javascript/interprete.png}
@@ -47,6 +48,7 @@ eseguito direttamente dall'hardware del computer.
 Il compilatore è il programma che traduce il codice sorgente in linguaggio macchina e, durante questa fase di
 traduzione, effettua delle ottimizzazioni che rendono il codice più efficiente.
 
+\vspace{5mm}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{javascript/compilazione.png}
@@ -66,7 +68,8 @@ Questo processo è chiamato Just-In-Time Compilation.
 
 \vspace{5mm}
 \begin{figure}[H]
-    \includegraphics[width=0.9\textwidth]{javascript/jit-compilation.png}
+    \centering
+    \includegraphics[width=\textwidth]{javascript/jit-flow.png}
     \caption{Processo di interpretazione con Just-In-Time compilation} 
     \label{fig:jit_compilation}
 \end{figure}
@@ -91,7 +94,7 @@ fondamentali non solo di un JavaScript Engine, ma di qualsiasi motore di esecuzi
 \vspace{5mm}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{javascript/stack-heap-pointers.png}
+    \includegraphics[width=\textwidth]{javascript/heapstack.png}
     \caption{Memory Heap e Call Stack}
     \label{fig:memory_heap_call_stack}
 \end{figure}
