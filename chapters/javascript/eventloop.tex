@@ -1,1 +1,52 @@
-\section{Event Loop}
+\section{Event Loop e Callback Queue}
+Fino ad ora abbiamo visto come JavaScript esegua le operazioni in modo sincrono, ovvero una dopo l'altra. 
+Questo comportamento è dovuto al fatto che il JavaScript è un linguaggio \textbf{sincrono e single-threaded}, ovvero
+esegue un solo task alla volta. Quando un Execution Context viene inserito nello Stack, viene eseguito immediatamente,
+e quando termina, viene rimosso dallo Stack.
+Tuttavia, ci sono delle operazione che hanno la necessità di essere eseguite in modo asincorno, come ad esempio le operazioni di fetch, setTimeout, setInterval, che possono richiedere molto tempo per essere completate, ma anche l'esecuzione di eventi come il click di un bottone, che non devono essere eseguite immediatamente.
+In questi casi, JavaScript non può permettersi di bloccare l'interfaccia utente, quindi deve trovare un modo per gestire queste operazioni in modo asincrono.
+
+\vspace{5mm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{javascript/eventloop.png}
+    \caption{Event Loop e Callback Queue}
+    \label{fig:eventloop}
+\end{figure}
+
+\color{red}
+\subsection{Event Loop}
+Per gestire le operazioni asincrone, JavaScript utilizza un meccanismo chiamato \textbf{Event Loop}. L'Event Loop è un ciclo che si occupa di monitorare lo Stack e la Callback Queue, e di spostare le funzioni dalla Callback Queue allo Stack quando lo Stack è vuoto. In questo modo, JavaScript può eseguire le operazioni asincrone senza bloccare l'interfaccia utente.
+
+\subsection{Callback Queue}
+La Callback Queue è una coda in cui vengono inserite le funzioni che devono essere eseguite in modo asincrono. Quando una funzione asincrona viene completata, viene inserita nella Callback Queue, in attesa di essere eseguita. Quando lo Stack è vuoto, l'Event Loop prende la funzione in testa alla Callback Queue e la sposta nello Stack, dove viene eseguita.
+
+\subsection{Esempio}
+Vediamo un esempio per capire meglio come funziona l'Event Loop e la Callback Queue.
+\begin{lstlisting}
+console.log('1');
+setTimeout(() => {
+  console.log('2');
+}, 0);
+console.log('3');
+\end{lstlisting}
+
+In questo esempio, vengono eseguite le seguenti operazioni:
+\begin{itemize}
+    \item Viene inserita la funzione \texttt{console.log('1')} nello Stack e viene eseguita. Viene stampato il numero 1.
+    \item Viene inserita la funzione \texttt{setTimeout(() => \{ console.log('2'); \}, 0)} nello Stack e viene eseguita. La funzione \texttt{setTimeout} è una funzione asincrona che esegue la funzione passata come argomento dopo un certo numero di millisecondi. In questo caso, la funzione \texttt{console.log('2')} viene eseguita dopo 0 millisecondi. La funzione \texttt{setTimeout} viene completata e viene inserita nella Callback Queue.
+    \item Viene inserita la funzione \texttt{console.log('3')} nello Stack e viene eseguita. Viene stampato il numero 3.
+    \item Lo Stack è vuoto, quindi l'Event Loop prende la funzione in testa alla Callback Queue e la sposta nello Stack. Viene eseguita la funzione \texttt{console.log('2')} e viene stampato il numero 2.
+    \item La Callback Queue è vuota, quindi l'Event Loop termina.
+    \item Viene stampato il numero 2.
+    \item Viene stampato il numero 3.
+    \item Viene stampato il numero 1.
+    \item Il programma termina.
+\end{itemize}
+
+In questo esempio, la funzione \texttt{console.log('2')} viene eseguita dopo la funzione \texttt{console.log('3')}, anche se la funzione \texttt{setTimeout} viene completata prima. Questo è dovuto al fatto che la funzione \texttt{setTimeout} viene inserita nella Callback Queue e viene eseguita solo quando lo Stack è vuoto.
+
+\subsection{Conclusioni}
+In questo capitolo abbiamo visto come JavaScript gestisca le operazioni asincrone utilizzando l'Event Loop e la Callback Queue. Questo meccanismo permette a JavaScript di eseguire le operazioni asincrone in modo efficiente, senza bloccare l'interfaccia utente. È importante capire come funziona l'Event Loop e la Callback Queue per scrivere codice JavaScript efficiente e performante.
+
+\color{black}

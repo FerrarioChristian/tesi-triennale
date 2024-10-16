@@ -106,4 +106,30 @@ Il Memory Heap è lo spazio di memoria in cui vengono allocate le variabili e gl
 Il Call Stack è una struttura dati a pila che tiene traccia delle chiamate di funzione in un programma. Quando una funzione viene chiamata, il motore JavaScript aggiunge un frame di attivazione alla cima dello stack, e quando la funzione ritorna, il frame di attivazione viene rimosso dallo stack. Questo processo è chiamato \textit{push} e \textit{pop} dallo stack. Il Call Stack è una struttura dati a pila, il che significa che le chiamate di funzione vengono gestite in ordine LIFO (Last In, First Out), cioè l'ultima funzione chiamata è la prima a ritornare.
 
 \subsection{Garbage Collection}
-\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management}{\color{blue}{Mark and sweep algorithm}}
+Ora che abbiamo visto come funzionano il Memory Heap e il Call Stack, e come JavaScript alloca la memoria e gestisce le chiamate di funzione, è necessario presentare un altro concetto fondamentale: la garbage collection.
+La garbage collection è il processo di deallocazione della memoria non più utilizzata da un programma. Quando un oggetto non è più necessario, il motore JavaScript dealloca lo spazio di memoria occupato da quell'oggetto, e la rende disponibile per altri oggetti.
+
+Il problema principale è che decidere se una certa memoria è ancora necessaria è un problema indecidibile, il che significa che non può esistere un algoritmo in grado di raccogliere tutta la memoria che non è più necessaria nel momento esatto in cui diventa obsoleta. Per cui è necessario utilizzare degli algoritmi di approssimazione che cercano di raccogliere la memoria non più utilizzata il più spesso possibile, senza rallentare troppo l'esecuzione del programma.
+
+\subsubsection{Mark and Sweep Algorithm}
+
+\vspace{5mm}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=0.95\linewidth]{javascript/mark.png} 
+        \caption{Mark Phase}
+        \label{fig:mark}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=0.95\linewidth]{javascript/sweep.png}
+        \caption{Sweep Phase}
+        \label{fig:sweep}
+        \end{subfigure}
+    \caption{Mark and Sweep Algorithm per la garbage collection}
+    \label{fig:markandsweep}
+\end{figure}
+
+Il principale algoritmo di garbage collection utilizzato dai JavaScript Engine è il Mark and Sweep Algorithm. 
+Questo algoritmo verifica se gli oggetti sono raggiungibili dal \emph{root object (window object)}, che è l'oggetto globale del programma, dividendo questo processo in due fasi: nella prima fase, il motore JavaScript marca gli oggetti che sono ancora in uso (\emph{mark}), e nella seconda fase, dealloca gli oggetti che non sono stati marcati \emph{sweep}. 
+Questo processo permette di liberare la memoria non più utilizzata, e di evitare i memory leaks, che sono una delle principali cause di crash di un programma.
