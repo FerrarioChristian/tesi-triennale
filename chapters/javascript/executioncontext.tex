@@ -4,12 +4,13 @@ Context e lo mette in cima al Call Stack. L'Execution Context è un oggetto che 
 L'Execution Context è composto da due componenti principali: il Variable Environment e il Lexical Environment.
 Il Variable Environment contiene le variabili dichiarate all'interno della funzione, le variabili dichiarate con la keyword var, e le dichiarazioni delle funzioni. Il Lexical Environment contiene le variabili dichiarate con la keyword let e const, e le variabili dichiarate all'interno di un blocco di codice.
 
-%\begin{figure}[H]
- %  \centering
-   % \includegraphics[width=0.8\textwidth]{javascript/executioncontext.png}
-  %  \caption{Execution Context}
-%\end{figure}
+\vspace{5mm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{javascript/executioncontext.png}
+    \caption{Execution Context}
+\end{figure}
 
 
 \subsection{Hoisting}
-Quando il JavaScript Engine crea un Execution Context, prima di eseguire il codice, esegue una fase di hoisting. Durante questa fase, il JavaScript Engine sposta tutte le dichiarazioni di variabili e funzioni all'inizio del codice. Questo significa che le variabili e le funzioni possono essere usate prima che siano state dichiarate. Tuttavia, solo le dichiarazioni vengono spostate all'inizio del codice, non le assegnazioni. Le assegnazioni rimangono al loro posto originale.  
+Quando il JavaScript Engine crea un Execution Context, prima di eseguire il codice, esegue una fase di hoisting. Durante questa fase, sposta tutte le dichiarazioni di variabili e funzioni all'inizio del codice. Questo significa che le variabili e le funzioni possono essere usate prima che siano state dichiarate. Tuttavia, solo le dichiarazioni vengono spostate all'inizio del codice, non le assegnazioni. Le assegnazioni rimangono al loro posto originale.  

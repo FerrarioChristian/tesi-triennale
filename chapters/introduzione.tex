@@ -23,9 +23,10 @@ architetture e delle tecniche di ottimizzazione trattate.
 Negli ultimi anni, lo sviluppo di applicazioni web ha subito un'evoluzione radicale, guidata dalla crescente necessità
 di prestazioni elevate, interfacce utente reattive e una migliore esperienza utente. Le tradizionali pagine web
 statiche, generate interamente dal server, non sono più sufficienti per soddisfare le esigenze moderne di
-applicazioni dinamiche e interattive, come quelle utilizzate nei social network, nelle piattaforme di e-commerce e nei
+applicazioni dinamiche e interattive, come i social network, le piattaforme di e-commerce e i
 servizi di streaming. Questo ha portato all’emergere di nuove architetture web che cercano di ottimizzare il modo in cui
-i contenuti vengono generati e serviti, bilanciando le esigenze di performance, usabilità, e riduzione dei costi e della diffoltà di sviluppo e manutenzione, in modi diversi a seconda delle esigenze del progetto.
+i contenuti vengono generati e serviti, bilanciando le esigenze di performance, usabilità, e riduzione dei costi e della
+difficoltà di sviluppo e manutenzione, in modi diversi a seconda delle esigenze del progetto.
 
 Un'altra esigenza critica delle moderne architetture web è l'ottimizzazione del caricamento delle risorse, che ha
 portato all'adozione di tecniche come il lazy loading, il code splitting e lo speculative loading. Questi approcci consentono di caricare solo
@@ -41,8 +42,8 @@ scalabili.
 \phantomsection
 \section*{Struttura della tesi}
 \addcontentsline{toc}{section}{Struttura della tesi}
-La tesi è strutturata in cinque capitoli principali, ciascuno dei quali affronta un aspetto specifico delle architetture
-web moderne e delle tecniche di ottimizzazione correlate.
+La tesi è strutturata in quattro capitoli principali, ciascuno dei quali affronta un aspetto specifico delle
+architetture web moderne e delle tecniche di ottimizzazione correlate.
 
 Il primo capitolo presenta le fondamenta dello sviluppo web, iniziando con una panoramica del JavaScript runtime
 environment, analizzando il funzionamento del JavaScript engine, entrando nel dettaglio di come il codice viene eseguito
@@ -52,21 +53,13 @@ browser e manipolare il DOM. Viene trattato il Document Object Model (DOM), una 
 documenti HTML e XML, che consente di manipolare la struttura e il contenuto di una pagina web.
 Vengono esaminate le caratteristiche fondamentali del runtime environment di JavaScript, con particolare attenzione alla gestione delle operazioni asincrone e alla gestione degli eventi.
 
-Il secondo capitolo esplora le gestione delle operazioni asincrone, analizzando il concetto di Promises, oggetti che
-rappresentano il completamento o il fallimento di operazioni asincrone. Vengono analizzati i principi fondamentali delle
-Promises, con esempi pratici di utilizzo per la gestione di chiamate asincrone, e le best practices per scrivere codice
-pulito e leggibile.
+Il secondo capitolo introduce il contesto generale delle architetture web moderne, analizzando le principali differenze tra Server-Side Rendering (SSR) e Client-Side Rendering (CSR), e presentando le architetture ibride come soluzione
+intermedia. Vengono esaminate le caratteristiche, i vantaggi e gli svantaggi di ciascuna architettura, e vengono confrontate in termini di prestazioni, usabilità e indicizzazione SEO.
 
-Il terzo capitolo introduce il contesto generale delle architetture web moderne, analizzando le principali differenze tra Server-Side Rendering (SSR) e Client-Side Rendering (CSR), e presentando le architetture ibride come soluzione
-intermedia. Vengono esaminate le caratteristiche, i vantaggi e gli svantaggi di ciascuna architettura, con particolare
-attenzione al confronto tra SSR e CSR in termini di prestazioni, usabilità e indicizzazione SEO.
+Il terzo capitolo approfondisce il concetto di hydration, una tecnica utilizzata per convertire pagine HTML statiche in
+pagine web dinamiche post-rendering. Viene spiegato il funzionamento di questa tecnica, le due fasi principali dell processo di hydration, e le diverse implementazioni possibili di questa tecnica in applicazioni web moderne.
 
-Il quarto capitolo approfondisce il concetto di hydration, una tecnica utilizzata per convertire pagine HTML statiche in
-pagine web dinamiche post-rendering. Viene spiegato il funzionamento di questa tecnica, con particolare attenzione al
-collegamento di event handlers agli elementi della pagina, per garantire un'interattività completa anche dopo il
-rendering iniziale.
-
-Il quinto capitolo si concentra sulle tecniche di ottimizzazione delle performance: il code splitting, il lazy
+Il quarto capitolo si concentra sulle tecniche di ottimizzazione delle performance: il code splitting, il lazy
 loading e lo speculative loading, che consentono di migliorare il caricamento delle risorse e l'esperienza utente.
 Vengono esaminate le caratteristiche di queste tecniche, i vantaggi che offrono e le modalità di implementazione in
 applicazioni web moderne.

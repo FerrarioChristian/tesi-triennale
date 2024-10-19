@@ -2,15 +2,84 @@
 
 Le performance delle applicazioni web sono un aspetto critico per garantire un'esperienza utente ottimale. Tempi di caricamento più veloci, maggiore reattività e una migliore gestione delle risorse sono fondamentali per mantenere gli utenti impegnati e soddisfatti. In questo contesto, l'ottimizzazione delle performance è diventata una priorità per gli sviluppatori web, che cercano di ridurre i tempi di caricamento, migliorare la fluidità delle applicazioni e ottimizzare l'uso delle risorse.
 
-\paragraph{Panoramica}
+\subsubsection{Panoramica}
 Con l'evoluzione del web, abbiamo assistito a un enorme aumento del numero e delle dimensioni delle risorse inviate agli
 utenti. Tra il 2011 e il 2019, il peso medio delle risorse è aumentato da 100 KB a 400 KB per i desktop e da 50 KB a
 350KB per i dispositivi mobili. Mentre le dimensioni delle immagini sono aumentate da 250 KB a 900 KB per i desktop e
-da 100 KB a 850 KB per i dispositivi mobili.
+da 100 KB a 850 KB per i dispositivi mobili. Questo aumento delle dimensioni delle risorse ha un impatto significativo
+sulle performance delle applicazioni web, rallentando i tempi di caricamento e aumentando il consumo di risorse.
+
+
+\vspace{5mm}
+\begin{figure}[H]
+% Primo grafico: Risorse
+\begin{subfigure}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.95\linewidth,
+    ybar=5pt,
+    symbolic x coords={2011, 2019},
+    xtick=data,
+    ymin=0,
+    ymax=1024,
+    ylabel={Dimensioni (KB)},
+    bar width=16pt,
+    nodes near coords,
+    enlarge x limits=0.3,
+    ymajorgrids=true,
+    grid style=dashed,
+    legend pos=north west
+  ]
+  
+  % Risorse desktop
+  \addplot coordinates {(2011,100) (2019,400)};
+  % Risorse mobile
+  \addplot coordinates {(2011,50) (2019,350)};
+  
+  \legend{Desktop, Mobile}
+  \end{axis}
+\end{tikzpicture}
+\caption{Dimensioni medie delle risorse.}
+\end{subfigure}
+\hfill
+% Secondo grafico: Immagini
+\begin{subfigure}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.95\linewidth,
+    ybar=5pt,
+    symbolic x coords={2011, 2019},
+    xtick=data,
+    ymin=0,
+    ymax=1024,
+    ylabel={Dimensioni (KB)},
+    bar width=16pt,
+    nodes near coords,
+    enlarge x limits=0.3,
+    ymajorgrids=true,
+    grid style=dashed,
+    legend pos=north west,
+  ]
+  
+  % Immagini desktop
+  \addplot coordinates {(2011,250) (2019,900)};
+  % Immagini mobile
+  \addplot coordinates {(2011,100) (2019,850)};
+  
+  \legend{Desktop, Mobile}
+  \end{axis}
+\end{tikzpicture}
+\caption{Dimensioni media delle immagini}
+\end{subfigure}
+
+\caption{Comparazione delle dimensioni delle risorse e delle immagini tra il 2011 e il 2019.}
+\end{figure}
+
 
 
 \input{chapters/performance/lazyloading}
 \input{chapters/performance/codesplitting}
 \input{chapters/performance/speculativeloading}
-\input{chapters/performance/impact}
 

@@ -1,14 +1,14 @@
 \section{WebAPIs}
 La WebAPI è un insieme di interfacce e metodi che permettono ai programmatori di interagire con il browser, manipolare
 il DOM e accedere a funzionalità esterne al liguaggio JavaScript, come \emph{fetch HTTP}, \emph{localStorage}, \emph{bluetooth} e altre. Queste API consentono di creare applicazioni web interattive e dinamiche, gestendo eventi, effetti visivi,
-richieste HTTP e molto altro. In questo capitolo, verranno esaminate alcune delle API più comuni e utilizzate nello
+richieste HTTP e molto altro. In questa sezione, verranno esaminate alcune delle API più comuni e utilizzate nello
 sviluppo di applicazioni web moderne.
 
 \subsection{Document Object Model (DOM)}
-Il Document Object Model (DOM) è una rappresentazione gerarchica dei documenti HTML e XML, che consente di manipolare la
-struttura e il contenuto di una pagina web. Il DOM è organizzato come un grafo ad albero, in cui ogni elemento della
-pagina è rappresentato da un nodo, con attributi, testo e figli associati. Questa struttura ad albero consente di
-accedere e modificare gli elementi della pagina in modo dinamico, utilizzando JavaScript.
+Il Document Object Model (DOM) è una rappresentazione gerarchica dei documenti HTML e XML, che consente di rappresentare
+e manipolare la struttura e il contenuto di una pagina web. Il DOM è organizzato come un grafo ad albero, in cui ogni
+elemento della pagina è rappresentato da un nodo, con attributi, testo e figli associati. Questa struttura ad albero
+consente di accedere e modificare gli elementi della pagina in modo dinamico, utilizzando JavaScript.
 
 \subsubsection{Selezione degli elementi}
 Per selezionare gli elementi del DOM, è possibile utilizzare i metodi \textit{getElementById()},
@@ -19,16 +19,30 @@ selettore CSS \textit{document.querySelector()} per selezionare un singolo eleme
 Questi metodi sono accessibili tramite l'oggetto \textit{document}, che rappresenta il documento corrente.
 
 \subsection{Window object}
-L'oggetto Window rappresenta la finestra del browser e fornisce metodi e proprietà per interagire con essa. Alcune delle funzionalità più comuni offerte dall'oggetto Window includono la gestione degli eventi, la manipolazione del DOM, la gestione dei cookie e la navigazione tra le pagine.
+L'oggetto Window rappresenta la finestra del browser e fornisce metodi e proprietà per interagire con essa. Alcune delle funzionalità più comuni offerte dall'oggetto Window includono la gestione degli eventi, la gestione dei cookie e la navigazione tra le pagine.
 
 Esempi di metodi e proprietà dell'oggetto Window includono:
 \begin{itemize}
     \item window.alert(): visualizza un messaggio di avviso all'utente.
-    \item window.localStorage: fornisce un'interfaccia per la memorizzazione di dati locali nel browser.
     \item window.scroll*(): fornisce metodi per lo scorrimento della finestra.
     \item window.open() / window.close(): apre una nuova finestra / chiude la finestra del browser.
     \item window.history.*(): fornisce metodi per accedere alla cronologia del browser.
 \end{itemize}
 
-\subsection{NodeJs e file system}
-Queste non sono le uniche API che un JavaScript engine può mettere a disposizione per l'interazione con il browser. Node.js, ad esempio, fornisce un'API per l'interazione con il file system, che consente di leggere e scrivere file, creare directory, gestire i permessi e molto altro. Questa API è particolarmente utile per lo sviluppo di applicazioni server-side e per la gestione dei file di configurazione e dei dati.
+\subsection{Node.js e file system}
+Queste non sono le uniche API che un JavaScript engine può mettere a disposizione per l'interazione con il browser.
+Node.js, ad esempio, fornisce un'API per l'interazione con il file system, che consente di leggere e scrivere file,
+creare directory, gestire i permessi e molto altro. Questa API è particolarmente utile per lo sviluppo di applicazioni
+server-side e per la gestione dei file di configurazione e dei dati.
+ 
+Il browser, inoltre mette a disposizione la StorageApi, che permette di memorizzare dati localmente nel browser, come ad
+esempio i dati di sessione, le preferenze dell'utente, i dati di configurazione e altro ancora. Questa API è utile per
+creare applicazioni web che devono memorizzare dati in modo persistente, utili per effettuare operazioni di caching,
+memorizzando dati che si rendono necessari spesso, alleggerendo il carico di richieste al server.
+La storage API mette a disposizione due metodi principali: \textit{localStorage} e \textit{sessionStorage}. Il primo
+permette di memorizzare dati in modo persistente, mentre il secondo memorizza i dati solo per la durata della sessione
+corrente.
+
+Altri esempi di WebAPIs includono l'API di geolocalizzazione, che consente di ottenere la posizione geografica
+dell'utente, l'API di notifica, che consente di inviare notifiche push al browser, la WebSockets API, che consente di
+creare connessioni bidirezionali tra il browser e il server, e molte altre.

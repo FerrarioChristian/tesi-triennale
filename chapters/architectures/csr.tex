@@ -3,7 +3,7 @@
 \vspace{5mm}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{architectures/CSR.png}
+    \includegraphics[width=0.99\textwidth]{architectures/CSR.png}
     \vspace{2mm}
     \caption{Processo di rendering lato client (CSR)}
     \label{fig:CSR}
@@ -30,12 +30,12 @@ Nella figura \ref{fig:CSRHTML} è mostrato un esempio di HTML inviato dal server
 \end{figure}
 \vspace{3mm}
 \newline
-Come si puo' notare, il documento HTML è molto semplice e contiene solo il una \texttt{div} con \texttt{id="root"}, che
+Come si puo' notare, il documento HTML è molto semplice e contiene solo una \texttt{div} con \texttt{id="root"}, che
 rappresenta il contenitore principale dove verrà inserito il contenuto generato dinamicamente dal codice JavaScript.
 
 
 \paragraph{Esempio di CSR:}
-Consideriamo il feed di un social media che deve mostrare un elenco di post. Utilizzando CSR, l'HTML e il JavaScript
+Consideriamo il feed di un social media che deve mostrare un elenco di post. Utilizzando il CSR, l'HTML e il JavaScript
 iniziali vengono inviati al client. Il codice JavaScript, eseguito sul client, recupera quindi i dati del post da un'API
 e li visualizza dinamicamente nel browser dell'utente. Mentre l'utente scorre, altri post possono essere recuperati in
 modo asincrono, ed è possibile commentare e mettere like senza dover ricaricare l'intera pagina.

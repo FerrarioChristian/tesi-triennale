@@ -27,7 +27,7 @@ L'AST è una rappresentazione ad albero del codice sorgente, che permette al mot
 \end{figure}
 
 \subsection{Compilazione}
-Nella fase di compilazione, l'AST viene tradotto in bytecode, oppure in linguaggio macchina, in base alle ottimizzazioni che il motore JavaScript decide di applicare. In questa sezinoe sono presentate le differenze tra interpreti e compilatori, e come il JavaScript Engine utilizza entrambe le tecniche per eseguire il codice JavaScript.
+Nella fase di compilazione, l'AST viene tradotto in bytecode, oppure in linguaggio macchina, in base alle ottimizzazioni che il motore JavaScript decide di applicare. In questa sezione sono presentate le differenze tra interpreti e compilatori, e come il JavaScript Engine utilizza entrambe le tecniche per eseguire il codice JavaScript.
 
 \paragraph{Interpreters e Compilers}
 Esistono due macro-categorie di linguaggi di programmazione: quelli interpretati e quelli compilati.
@@ -131,5 +131,5 @@ Il problema principale è che decidere se una certa memoria è ancora necessaria
 \end{figure}
 
 Il principale algoritmo di garbage collection utilizzato dai JavaScript Engine è il Mark and Sweep Algorithm. 
-Questo algoritmo verifica se gli oggetti sono raggiungibili dal \emph{root object (window object)}, che è l'oggetto globale del programma, dividendo questo processo in due fasi: nella prima fase, il motore JavaScript marca gli oggetti che sono ancora in uso (\emph{mark}), e nella seconda fase, dealloca gli oggetti che non sono stati marcati \emph{sweep}. 
+Questo algoritmo verifica se gli oggetti sono raggiungibili dal \emph{root object (window object)}, che è l'oggetto globale del programma, dividendo questo processo in due fasi: nella prima fase, il motore JavaScript marca gli oggetti che sono ancora in uso (\emph{mark}), e nella seconda fase, dealloca gli oggetti che non sono stati marcati (\emph{sweep}). 
 Questo processo permette di liberare la memoria non più utilizzata, e di evitare i memory leaks, che sono una delle principali cause di crash di un programma.
