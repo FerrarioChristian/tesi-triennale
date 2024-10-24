@@ -80,7 +80,8 @@ In particolare, nella compilazione JIT, il codice viene tradotto in bytecode, e 
 componente apposito, chiamato \textit{monitor}, monitora il codice, e se rileva che una parte del codice può beneficiare
 di una ottimizzazione (ad esempio una porzione di codice che viene eseguita in più occasioni, o del codice che potrebbe
 richiedere un elevato tempo computazionale), allora la traduce in linguaggio macchina, la ottimizza, e la sostituisce al
-bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.\\
+bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.
+Il compilatore JIT del V8 engine è chiamato \textit{TurboFan}.\\
 Nella figura \ref{fig:jit_compilation} è rappresentato uno schema del processo di Just-In-Time Compilation.
 
 
