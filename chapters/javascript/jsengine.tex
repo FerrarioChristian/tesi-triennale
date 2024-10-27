@@ -1,6 +1,6 @@
 \section{JavaScript Engine}
 Il JavaScript Engine è il cuore del JavaScript Runtime Environment, il componente che si occupa di eseguire il codice JavaScript.
-Quando viene scritto del codice JavaScript, esso non viene esguito direttamente dall'hardware del computer,
+Quando viene scritto del codice JavaScript, esso non viene eseguito direttamente dall'hardware del computer,
 ma passa attraverso il JavaScript Engine, che lo traduce in istruzioni che il computer può eseguire.
 Questo processo avviene in tre fasi:
 \begin{enumerate}
@@ -81,12 +81,12 @@ componente apposito, chiamato \textit{monitor}, monitora il codice, e se rileva 
 di una ottimizzazione (ad esempio una porzione di codice che viene eseguita in più occasioni, o del codice che potrebbe
 richiedere un elevato tempo computazionale), allora la traduce in linguaggio macchina, la ottimizza, e la sostituisce al
 bytecode. Questo processo permette di eseguire il codice più velocemente, e di ottimizzare le prestazioni del programma.
-Il compilatore JIT del V8 engine è chiamato \textit{TurboFan}.\\
+L'interprete del V8 engine è chiamato \textit{Ignition}\footcite{ignition}, e il compilatore JIT è chiamato \textit{TurboFan}\footcite{turbofan}.
 Nella figura \ref{fig:jit_compilation} è rappresentato uno schema del processo di Just-In-Time Compilation.
 
 
 \subsection{Esecuzione}
-Come abbbiamo visto in precedenza, la compilazione e l'esecuzione del codice sono strettamente legate, e avvengono in
+Come abbiamo visto in precedenza, la compilazione e l'esecuzione del codice sono strettamente legate, e avvengono in
 maniera simultanea. Il codice sorgente viene tradotto in bytecode, e poi eseguito dal motore JavaScript.
 Ora vediamo nel dettaglio come avviene l'esecuzione del codice.
 Innanzitutto è necessario presentare due concetti chiave: la Memory Heap e il Call Stack, che sono due componenti
@@ -113,24 +113,22 @@ La garbage collection è il processo di deallocazione della memoria non più uti
 Il problema principale è che decidere se una certa memoria è ancora necessaria è un problema indecidibile, il che significa che non può esistere un algoritmo in grado di raccogliere tutta la memoria che non è più necessaria nel momento esatto in cui diventa obsoleta. Per cui è necessario utilizzare degli algoritmi di approssimazione che cercano di raccogliere la memoria non più utilizzata il più spesso possibile, senza rallentare troppo l'esecuzione del programma.
 
 \subsubsection{Mark and Sweep Algorithm}
-
-\vspace{5mm}
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=0.95\linewidth]{javascript/mark.png} 
+    \begin{subfigure}{0.38\textwidth}
+        \includegraphics[width=\linewidth]{javascript/mark.png} 
         \caption{Mark Phase}
         \label{fig:mark}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=0.95\linewidth]{javascript/sweep.png}
+    \hspace{3mm}
+    \begin{subfigure}{0.38\textwidth}
+        \includegraphics[width=\linewidth]{javascript/sweep.png}
         \caption{Sweep Phase}
         \label{fig:sweep}
         \end{subfigure}
     \caption{Mark and Sweep Algorithm per la garbage collection}
     \label{fig:markandsweep}
 \end{figure}
-
-Il principale algoritmo di garbage collection utilizzato dai JavaScript Engine è il Mark and Sweep Algorithm. 
+Il principale algoritmo di garbage collection utilizzato dai JavaScript Engine è il Mark and Sweep Algorithm\footcite{markandsweep}. 
 Questo algoritmo verifica se gli oggetti sono raggiungibili dal \emph{root object (window object)}, che è l'oggetto globale del programma, dividendo questo processo in due fasi: nella prima fase, il motore JavaScript marca gli oggetti che sono ancora in uso (\emph{mark}), e nella seconda fase, dealloca gli oggetti che non sono stati marcati (\emph{sweep}). 
 Questo processo permette di liberare la memoria non più utilizzata, e di evitare i memory leaks, che sono una delle principali cause di crash di un programma.
